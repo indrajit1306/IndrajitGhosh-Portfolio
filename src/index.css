@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #0f172a;
+    --primary: #3b82f6;
+    --primary-glow: rgba(59, 130, 246, 0.5);
+    --secondary: #64748b;
+    --accent: #8b5cf6;
+  }
+
+  .dark {
+    --background: #050505;
+    /* Deep cinematic black */
+    --foreground: #f8fafc;
+    --primary: #60a5fa;
+    --primary-glow: rgba(96, 165, 250, 0.4);
+    --secondary: #94a3b8;
+    --accent: #a78bfa;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-500 antialiased font-sans overflow-x-hidden;
+  }
+
+  @media (min-width: 768px) {
+
+    body,
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    [role="button"] {
+      cursor: none !important;
+    }
+  }
+
+  /* Lenis smooth scroll */
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-800 rounded-full;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/90 dark:bg-black/45 backdrop-blur-md border border-slate-200/60 dark:border-white/10;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl shadow-[0_8px_32px_0_rgba(15,23,42,0.03)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.45)];
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary bg-300% animate-gradient;
+  }
+}
+
+@layer utilities {
+  .bg-300\% {
+    background-size: 300% 300%;
+  }
+
+  .animate-gradient {
+    animation: gradient 8s ease infinite;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@layer utilities {
+  .text-3d {
+    color: #0f0500;
+    -webkit-text-stroke: 2px #fde047; /* bright yellow border */
+    text-shadow: 
+      0px 1px 0 #eab308,
+      0px 2px 0 #eab308,
+      0px 3px 0 #d97706,
+      0px 4px 0 #d97706,
+      0px 5px 0 #b45309,
+      0px 6px 0 #b45309,
+      0px 7px 0 #92400e,
+      0px 8px 0 #92400e,
+      0px 9px 0 #78350f,
+      0px 10px 0 #78350f,
+      0px 11px 0 #451a03,
+      0px 12px 0 #451a03,
+      0px 20px 25px rgba(0, 0, 0, 0.9);
+  }
+}
