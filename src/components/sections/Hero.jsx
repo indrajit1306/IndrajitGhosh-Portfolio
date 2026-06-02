@@ -72,7 +72,7 @@ export default function Hero() {
 
           <motion.h1 
             variants={titleVariants} 
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 leading-[1.1] text-white flex flex-wrap gap-x-[0.25em]"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-20 leading-[1.1] text-white flex flex-wrap gap-x-[0.25em]"
             aria-label="Indrajit Ghosh"
             style={{ perspective: "1000px" }}
           >
