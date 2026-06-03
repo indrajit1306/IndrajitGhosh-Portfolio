@@ -75,7 +75,7 @@ export default function Skills() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -92,7 +92,7 @@ export default function Skills() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {skillCategories.map((category, index) => {
@@ -140,7 +140,7 @@ export default function Skills() {
                           <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: `${skill.level}%` }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false }}
                             transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
                             className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
                           />

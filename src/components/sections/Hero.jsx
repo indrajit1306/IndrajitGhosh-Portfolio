@@ -98,16 +98,25 @@ export default function Hero() {
                   return (
                     <motion.span
                       key={`${wordIndex}-${charIndex}`}
-                      custom={{ y: archY, scale, rotate }}
+                      custom={{ y: archY, scale, rotate, index: absoluteIndex }}
                       variants={{
                         hidden: { opacity: 0, y: 50, rotateX: -45, scale: 0.8 },
                         visible: (custom) => ({
                           opacity: 1,
-                          y: custom.y,
+                          y: [custom.y, custom.y - 15],
                           rotateZ: custom.rotate,
                           scale: custom.scale,
                           rotateX: 0,
-                          transition: { duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }
+                          transition: { 
+                            y: {
+                              duration: 2,
+                              repeat: Infinity,
+                              repeatType: "reverse",
+                              ease: "easeInOut",
+                              delay: custom.index * 0.15
+                            },
+                            default: { duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }
+                          }
                         })
                       }}
                       className="text-3d inline-block"
