@@ -502,8 +502,8 @@ export default function Projects() {
                   <button
                     onClick={() => setSelectedRole('ml')}
                     className={`flex-1 py-3 px-4 rounded-lg font-bold text-[10px] tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer ${selectedRole === 'ml'
-                        ? 'bg-primary text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]'
-                        : 'text-secondary hover:text-foreground'
+                      ? 'bg-primary text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]'
+                      : 'text-secondary hover:text-foreground'
                       }`}
                   >
                     <Cpu className="w-3.5 h-3.5" />
@@ -512,8 +512,8 @@ export default function Projects() {
                   <button
                     onClick={() => setSelectedRole('frontend')}
                     className={`flex-1 py-3 px-4 rounded-lg font-bold text-[10px] tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer ${selectedRole === 'frontend'
-                        ? 'bg-accent text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]'
-                        : 'text-secondary hover:text-foreground'
+                      ? 'bg-accent text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]'
+                      : 'text-secondary hover:text-foreground'
                       }`}
                   >
                     <Laptop className="w-3.5 h-3.5" />
