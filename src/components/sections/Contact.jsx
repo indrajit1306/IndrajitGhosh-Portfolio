@@ -219,7 +219,7 @@ export default function Contact() {
             {/* Signature Accent Block */}
             <div className="text-right md:border-l md:border-slate-200/60 dark:md:border-white/10 md:pl-12 self-end md:self-auto shrink-0">
               <p className="text-xs text-secondary/60 uppercase tracking-widest font-mono mb-2">Signature</p>
-              <h5 className="text-3xl font-extrabold text-gradient tracking-tight bg-clip-text font-serif italic py-1">
+              <h5 className="text-3xl md:text-4xl font-extrabold text-gradient drop-shadow-[0_0_15px_rgba(139,92,246,0.4)] tracking-tight font-serif italic py-1">
                 Indrajit Ghosh
               </h5>
               <div className="w-24 h-[1px] bg-accent/30 ml-auto mt-1" />
