@@ -72,62 +72,11 @@ export default function Hero() {
 
           <motion.h1 
             variants={titleVariants} 
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-20 leading-[1.1] text-white flex flex-wrap gap-x-[0.25em]"
-            aria-label="Indrajit Ghosh"
-            style={{ perspective: "1000px" }}
+            className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-8 leading-[1.2]"
           >
-            {"Indrajit Ghosh".split(' ').map((word, wordIndex, wordsArray) => {
-              const prevWordsLength = wordsArray.slice(0, wordIndex).join(' ').length;
-              const startIndex = wordIndex === 0 ? 0 : prevWordsLength + 1;
-              const titleText = "Indrajit Ghosh";
-              const centerIndex = (titleText.length - 1) / 2;
-
-              return (
-              <span key={wordIndex} className="inline-flex">
-                {word.split('').map((char, charIndex) => {
-                  const absoluteIndex = startIndex + charIndex;
-                  const offset = absoluteIndex - centerIndex;
-                  
-                  // Arch calculation: center is 0, edges pushed down (positive Y)
-                  const archY = Math.pow(offset, 2) * 1.5; 
-                  // Scale calculation: center is slightly larger
-                  const scale = 1 + (1 - Math.abs(offset) / centerIndex) * 0.15;
-                  // Slight rotation to follow the curve
-                  const rotate = offset * 1.5;
-
-                  return (
-                    <motion.span
-                      key={`${wordIndex}-${charIndex}`}
-                      custom={{ y: archY, scale, rotate, index: absoluteIndex }}
-                      variants={{
-                        hidden: { opacity: 0, y: 50, rotateX: -45, scale: 0.8 },
-                        visible: (custom) => ({
-                          opacity: 1,
-                          y: [custom.y, custom.y - 15],
-                          rotateZ: custom.rotate,
-                          scale: custom.scale,
-                          rotateX: 0,
-                          transition: { 
-                            y: {
-                              duration: 2,
-                              repeat: Infinity,
-                              repeatType: "reverse",
-                              ease: "easeInOut",
-                              delay: custom.index * 0.15
-                            },
-                            default: { duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }
-                          }
-                        })
-                      }}
-                      className="text-3d inline-block"
-                      style={{ transformOrigin: "bottom center" }}
-                    >
-                      {char}
-                    </motion.span>
-                  );
-                })}
-              </span>
-            )})}
+            <span className="text-gradient drop-shadow-[0_0_25px_rgba(139,92,246,0.4)] pb-4 block">
+              Indrajit Ghosh
+            </span>
           </motion.h1>
 
           <motion.h2 variants={itemVariants} className="text-xl md:text-2xl font-medium text-gray-300 mb-8">
