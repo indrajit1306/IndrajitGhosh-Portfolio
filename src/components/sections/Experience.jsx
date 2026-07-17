@@ -4,15 +4,15 @@ import { Briefcase, Award, CheckCircle2, Calendar, MapPin } from 'lucide-react';
 
 const experiences = [
   {
-    role: "Full Stack & UI/UX Developer Intern",
-    company: "AI & Web Development Solutions",
-    location: "Kolkata, WB (Remote)",
-    duration: "March 2025 - Present",
-    description: "Spearheading the creation of modern, responsive interfaces and robust backend integration.",
+    role: "Fullstack Web Development Intern",
+    company: "Labmentix Pvt.",
+    duration: "Nov 2025 - May 2026",
+    description: "Worked on the design, development, testing, and maintenance of responsive web applications and websites using front-end and back-end technologies. Collaborated with the development team to build user-friendly, functional, and scalable web solutions while following industry-standard coding practices.",
     highlights: [
-      "Designing and implementing interactive, state-driven interfaces using React and Tailwind CSS.",
-      "Developing optimized database models and writing high-efficiency SQL query sets.",
-      "Integrating predictive AI models and APIs (e.g. YouTube, facial recognition) into production web apps."
+      "Developed responsive and user-friendly web applications using HTML, CSS, JavaScript, and modern web development practices.",
+      "Assisted in front-end and back-end development, implementing features and optimizing application performance.",
+      "Collaborated with team members to design, test, debug, and maintain web applications and websites.",
+      "Managed database operations and ensured efficient data storage, retrieval, and integration within applications."
     ]
   }
 ];
@@ -138,10 +138,12 @@ export default function Experience() {
                         <Calendar className="w-3 h-3" />
                         {exp.duration}
                       </span>
-                      <span className="flex items-center gap-1.5 text-secondary pl-1 pt-1 justify-end">
-                        <MapPin className="w-3 h-3" />
-                        {exp.location}
-                      </span>
+                      {exp.location && (
+                        <span className="flex items-center gap-1.5 text-secondary pl-1 pt-1 justify-end">
+                          <MapPin className="w-3 h-3" />
+                          {exp.location}
+                        </span>
+                      )}
                     </div>
                   </div>
 
