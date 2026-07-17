@@ -86,10 +86,10 @@ function FloatingShapes() {
 
 function SceneSetup() {
   const { viewport } = useThree();
-  const isMobile = viewport.width < 5;
+  const isMobile = viewport.width < 6;
   
   return (
-    <group position={isMobile ? [0, 2, 0] : [4, 0, 0]} scale={isMobile ? 0.7 : 1}>
+    <group position={isMobile ? [0, 1.7, 0] : [4, -0.5, 0]} scale={isMobile ? 0.45 : 0.9}>
       <StylizedLaptop />
       <FloatingShapes />
     </group>
@@ -98,7 +98,7 @@ function SceneSetup() {
 
 export default function HeroCanvas() {
   return (
-    <div className="absolute inset-0 z-0 bg-[#020008]">
+    <div className="absolute inset-0 z-0 bg-transparent transition-colors duration-300">
       <Canvas camera={{ position: [0, 1, 10], fov: 45 }}>
         <ambientLight intensity={0.4} />
         <directionalLight position={[10, 10, 5]} intensity={1.5} />
