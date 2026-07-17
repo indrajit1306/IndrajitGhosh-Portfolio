@@ -52,7 +52,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-[#020008] overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center bg-slate-50 dark:bg-[#020008] overflow-hidden transition-colors duration-300">
       {/* 3D Background & Laptop */}
       <div className="absolute inset-0 z-0">
         <HeroCanvas />
@@ -65,38 +65,38 @@ export default function Hero() {
           animate="visible"
           className="max-w-2xl pointer-events-auto"
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-gray-300">
+          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-slate-200 dark:border-white/10 bg-slate-100/50 dark:bg-white/5 text-xs font-medium text-slate-700 dark:text-gray-300">
             <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.8)] animate-pulse"></span>
             Available for new opportunities
           </motion.div>
 
           <motion.h1 
             variants={titleVariants} 
-            className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-8 leading-[1.2]"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold tracking-tight mb-4 md:mb-8 leading-[1.1] md:leading-[1.2]"
           >
-            <span className="text-gradient drop-shadow-[0_0_25px_rgba(139,92,246,0.4)] pb-4 block">
+            <span className="text-gradient drop-shadow-[0_0_25px_rgba(139,92,246,0.4)] pb-2 md:pb-4 block">
               Indrajit Ghosh
             </span>
           </motion.h1>
 
-          <motion.h2 variants={itemVariants} className="text-xl md:text-2xl font-medium text-gray-300 mb-8">
+          <motion.h2 variants={itemVariants} className="text-xl md:text-2xl font-medium text-slate-700 dark:text-gray-300 mb-8">
             Full Stack Developer & Software Engineer
           </motion.h2>
 
-          <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-400 max-w-xl mb-10 leading-relaxed">
+          <motion.p variants={itemVariants} className="text-base md:text-lg text-slate-600 dark:text-gray-400 max-w-xl mb-10 leading-relaxed">
             I build exceptional, high-performance web applications and digital experiences using React, Spring Boot, and cloud architecture.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
-            <a href="#projects" className="px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors flex items-center gap-2">
+            <a href="#projects" className="px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-slate-800 dark:hover:bg-gray-200 transition-colors flex items-center gap-2">
               View Projects <ArrowRight className="w-4 h-4" />
             </a>
 
-            <a href="#" className="px-6 py-3 bg-black border border-white/10 text-white font-medium rounded-full hover:bg-white/10 transition-colors flex items-center gap-2">
+            <a href="#" className="px-6 py-3 bg-white dark:bg-black border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-medium rounded-full hover:bg-slate-50 dark:hover:bg-white/10 transition-colors flex items-center gap-2">
               <Download className="w-4 h-4" /> Resume
             </a>
 
-            <a href="#contact" className="px-4 py-3 text-gray-400 hover:text-white transition-colors flex items-center gap-2 ml-2">
+            <a href="#contact" className="px-4 py-3 text-slate-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-2 ml-2">
               <Send className="w-4 h-4" /> Contact
             </a>
           </motion.div>
@@ -108,7 +108,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 right-8 z-10 text-[10px] text-gray-500 uppercase tracking-[0.2em] font-mono pointer-events-none"
+        className="absolute bottom-8 right-8 z-10 text-[10px] text-slate-400 dark:text-gray-500 uppercase tracking-[0.2em] font-mono pointer-events-none"
       >
         Interact: Drag to rotate camera
       </motion.div>
