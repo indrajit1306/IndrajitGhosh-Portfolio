@@ -62,117 +62,122 @@ export default function About() {
       {/* Background decoration */}
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            About <span className="text-gradient">Me</span>
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Summary and Profile Details */}
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+        {/* Main Background Card */}
+        <div className="glass-card bg-blue-50/80 dark:bg-blue-900/20 p-8 md:p-12 lg:p-16 border border-blue-200/50 dark:border-blue-500/20 relative overflow-hidden shadow-2xl shadow-blue-500/10">
+          {/* Top accent line for the card */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+          
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 space-y-8"
+            className="text-center mb-16"
           >
-            <div className="glass-card p-8 relative overflow-hidden group">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent" />
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Who I Am</h3>
-              <p className="text-secondary leading-relaxed mb-6 font-light">
-                Results-driven and detail-oriented Full Stack Developer with strong knowledge of web development,
-                software engineering, database management, and responsive UI design.
-              </p>
-              <p className="text-secondary leading-relaxed mb-8 font-light">
-                Skilled in Java, JavaScript, Python, SQL, and modern frontend frameworks, with deep problem-solving abilities
-                and a passion for building interactive, scalable, and beautifully optimized digital applications.
-              </p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              About <span className="text-gradient">Me</span>
+            </h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
+          </motion.div>
 
-              {/* Quick Details List */}
-              <div className="space-y-4 pt-6 border-t border-slate-200/60 dark:border-white/10 text-sm">
-                <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
-                  <MapPin className="w-4 h-4 text-primary shrink-0" />
-                  <span>Kolkata, West Bengal, India</span>
-                </div>
-                <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
-                  <Mail className="w-4 h-4 text-primary shrink-0" />
-                  <a href="mailto:i64854054@gmail.com">i64854054@gmail.com</a>
-                </div>
-                <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
-                  <Phone className="w-4 h-4 text-primary shrink-0" />
-                  <a href="tel:+919705787037">+91 9705787037</a>
-                </div>
-                <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
-                  <ExternalLink className="w-4 h-4 text-primary shrink-0" />
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub Portfolio</a>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* Summary and Profile Details */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-5 space-y-8"
+            >
+              <div className="bg-slate-50/50 dark:bg-black/20 rounded-2xl p-8 relative overflow-hidden group border border-slate-200/50 dark:border-white/5">
+                <h3 className="text-2xl font-bold mb-6 text-foreground">Who I Am</h3>
+                <p className="text-secondary leading-relaxed mb-6 font-light">
+                  Results-driven and detail-oriented Full Stack Developer with strong knowledge of web development,
+                  software engineering, database management, and responsive UI design.
+                </p>
+                <p className="text-secondary leading-relaxed mb-8 font-light">
+                  Skilled in Java, JavaScript, Python, SQL, and modern frontend frameworks, with deep problem-solving abilities
+                  and a passion for building interactive, scalable, and beautifully optimized digital applications.
+                </p>
+
+                {/* Quick Details List */}
+                <div className="space-y-4 pt-6 border-t border-slate-200/60 dark:border-white/10 text-sm">
+                  <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
+                    <MapPin className="w-4 h-4 text-primary shrink-0" />
+                    <span>Kolkata, West Bengal, India</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
+                    <Mail className="w-4 h-4 text-primary shrink-0" />
+                    <a href="mailto:i64854054@gmail.com">i64854054@gmail.com</a>
+                  </div>
+                  <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
+                    <Phone className="w-4 h-4 text-primary shrink-0" />
+                    <a href="tel:+919705787037">+91 9705787037</a>
+                  </div>
+                  <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
+                    <ExternalLink className="w-4 h-4 text-primary shrink-0" />
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub Portfolio</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Education Timeline */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
-            className="lg:col-span-7 space-y-8"
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <GraduationCap className="w-6 h-6 text-accent" />
-              <h3 className="text-2xl font-bold">Education</h3>
-            </div>
+            {/* Education Timeline */}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, margin: "-100px" }}
+              className="lg:col-span-7 space-y-8"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <GraduationCap className="w-6 h-6 text-accent" />
+                <h3 className="text-2xl font-bold">Education</h3>
+              </div>
 
-            <div ref={timelineRef} className="relative pl-6 space-y-10">
-              {/* Unlit background timeline path line */}
-              <div className="absolute left-0 top-2 bottom-2 w-[1px] bg-slate-200 dark:bg-white/10" />
+              <div ref={timelineRef} className="relative pl-6 space-y-10">
+                {/* Unlit background timeline path line */}
+                <div className="absolute left-0 top-2 bottom-2 w-[1px] bg-slate-200 dark:bg-white/10" />
 
-              {/* Glowing active animated timeline scroll line */}
-              <motion.div
-                style={{ scaleY }}
-                className="absolute left-0 top-2 bottom-2 w-[1px] bg-accent origin-top shadow-[0_0_10px_var(--primary-glow)]"
-              />
-
-              {education.map((item, index) => (
+                {/* Glowing active animated timeline scroll line */}
                 <motion.div
-                  key={index}
-                  variants={cardVariants}
-                  className="relative group"
-                >
-                  {/* Bullet node on timeline */}
-                  <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-accent transition-all duration-300 group-hover:scale-125 group-hover:bg-accent shadow-[0_0_12px_rgba(139,92,246,0.5)]" />
+                  style={{ scaleY }}
+                  className="absolute left-0 top-2 bottom-2 w-[1px] bg-accent origin-top shadow-[0_0_10px_var(--primary-glow)]"
+                />
 
-                  <div className="glass-card p-6 hover:border-accent/40 transition-all duration-300">
-                    <div className="flex flex-wrap justify-between items-start gap-2 mb-3">
-                      <div>
-                        <h4 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
-                          {item.degree}
-                        </h4>
-                        <p className="text-sm text-secondary">{item.institution}</p>
+                {education.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    variants={cardVariants}
+                    className="relative group"
+                  >
+                    {/* Bullet node on timeline */}
+                    <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-accent transition-all duration-300 group-hover:scale-125 group-hover:bg-accent shadow-[0_0_12px_rgba(139,92,246,0.5)]" />
+
+                    <div className="bg-slate-50/50 dark:bg-black/20 rounded-2xl p-6 hover:border-accent/40 border border-slate-200/50 dark:border-white/5 transition-all duration-300">
+                      <div className="flex flex-wrap justify-between items-start gap-2 mb-3">
+                        <div>
+                          <h4 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
+                            {item.degree}
+                          </h4>
+                          <p className="text-sm text-secondary">{item.institution}</p>
+                        </div>
+                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-accent/10 text-accent border border-accent/20 flex items-center gap-1.5">
+                          <Calendar className="w-3 h-3" />
+                          {item.duration}
+                        </span>
                       </div>
-                      <span className="text-xs font-semibold px-3 py-1 rounded-full bg-accent/10 text-accent border border-accent/20 flex items-center gap-1.5">
-                        <Calendar className="w-3 h-3" />
-                        {item.duration}
-                      </span>
+                      <p className="text-sm text-secondary mb-3 leading-relaxed font-light">{item.description}</p>
+                      <div className="text-xs text-primary font-medium tracking-wider uppercase">
+                        Score: <span className="text-foreground">{item.score}</span>
+                      </div>
                     </div>
-                    <p className="text-sm text-secondary mb-3 leading-relaxed font-light">{item.description}</p>
-                    <div className="text-xs text-primary font-medium tracking-wider uppercase">
-                      Score: <span className="text-foreground">{item.score}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
