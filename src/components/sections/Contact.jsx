@@ -1,21 +1,49 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, FileText } from 'lucide-react';
+import ThankYou from './ThankYou';
 
 export default function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    setIsError(false);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          // TODO: Get your free access key from https://web3forms.com/ and paste it below
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setIsSuccess(true);
+        setFormState({ name: '', email: '', message: '' });
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        setIsError(true);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setIsError(true);
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormState({ name: '', email: '', message: '' });
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1800);
+    }
   };
 
   const currentDate = new Date().toLocaleDateString('en-US', {
@@ -67,8 +95,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs text-secondary uppercase font-semibold tracking-wider">Email Address</p>
-                    <a href="mailto:i64854054@gmail.com" className="text-sm font-medium hover:underline text-foreground mt-1 block">
-                      i64854054@gmail.com
+                    <a href="mailto:ijghosh13@gmail.com" className="text-sm font-medium hover:underline text-foreground mt-1 block">
+                      ijghosh13@gmail.com
                     </a>
                   </div>
                 </div>
@@ -80,7 +108,7 @@ export default function Contact() {
                   <div>
                     <p className="text-xs text-secondary uppercase font-semibold tracking-wider">Phone / Mobile</p>
                     <a href="tel:+919705787037" className="text-sm font-medium hover:underline text-foreground mt-1 block">
-                      +91 9705787037
+                      +91 8240657314
                     </a>
                   </div>
                 </div>
@@ -90,7 +118,7 @@ export default function Contact() {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-secondary uppercase font-semibold tracking-wider">Office Location</p>
+                    <p className="text-xs text-secondary uppercase font-semibold tracking-wider">Address</p>
                     <span className="text-sm font-medium text-foreground mt-1 block">
                       Kolkata, West Bengal, India
                     </span>
@@ -169,6 +197,12 @@ export default function Contact() {
                     />
                   </div>
 
+                  {isError && (
+                    <div className="text-red-500 text-sm font-medium p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-center">
+                      Something went wrong. Please check your connection or try again later.
+                    </div>
+                  )}
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -186,46 +220,8 @@ export default function Contact() {
           </motion.div>
         </div>
 
-        {/* Declaration and Signature Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-50px" }}
-          transition={{ duration: 0.7 }}
-          className="glass-card p-8 border border-slate-200/50 dark:border-white/10 bg-slate-50/50 dark:bg-black/40 relative overflow-hidden"
-        >
-          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-accent/50 to-primary/50" />
-
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 relative z-10">
-            <div className="space-y-4 max-w-2xl">
-              <div className="flex items-center gap-2 text-accent">
-                <FileText className="w-5 h-5" />
-                <h4 className="text-sm font-bold uppercase tracking-wider">Formal Declaration</h4>
-              </div>
-              <p className="text-sm text-secondary italic font-light leading-relaxed">
-                "I hereby declare that the information provided above is true to the best of my knowledge and belief."
-              </p>
-
-              <div className="flex flex-wrap gap-x-8 gap-y-2 text-xs text-secondary/70 pt-2 font-mono">
-                <div>
-                  Date: <span className="text-foreground">{currentDate}</span>
-                </div>
-                <div>
-                  Place: <span className="text-foreground">Kolkata, WB, India</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Signature Accent Block */}
-            <div className="text-right md:border-l md:border-slate-200/60 dark:md:border-white/10 md:pl-12 self-end md:self-auto shrink-0">
-              <p className="text-xs text-secondary/60 uppercase tracking-widest font-mono mb-2">Signature</p>
-              <h5 className="text-3xl md:text-4xl font-extrabold text-gradient drop-shadow-[0_0_15px_rgba(139,92,246,0.4)] tracking-tight font-serif italic py-1">
-                Indrajit Ghosh
-              </h5>
-              <div className="w-24 h-[1px] bg-accent/30 ml-auto mt-1" />
-            </div>
-          </div>
-        </motion.div>
+        {/* Thank You Section */}
+        <ThankYou />
       </div>
     </section>
   );
