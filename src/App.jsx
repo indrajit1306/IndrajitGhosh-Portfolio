@@ -38,7 +38,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-white">
+    <div className="relative min-h-screen text-foreground overflow-x-hidden selection:bg-primary selection:text-white">
       {/* Hide cursor on mobile/touch devices via CSS media query later, or keep it custom */}
       <div className="hidden md:block">
         <CustomCursor />
