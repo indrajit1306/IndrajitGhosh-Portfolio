@@ -6,7 +6,8 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
+    --background: #fdf0df; /* Warm sandy peach */
+    --background-end: #fae4cb; /* Slightly deeper sandy peach */
     --foreground: #0f172a;
     --primary: #3b82f6;
     --primary-glow: rgba(59, 130, 246, 0.5);
@@ -16,6 +17,7 @@
 
   .dark {
     --background: #050505;
+    --background-end: #050505;
     /* Deep cinematic black */
     --foreground: #f8fafc;
     --primary: #60a5fa;
@@ -25,7 +27,12 @@
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-500 antialiased font-sans overflow-x-hidden;
+    @apply text-foreground transition-colors duration-500 antialiased font-sans overflow-x-hidden min-h-screen;
+    background: 
+      /* Subtle noise texture */
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"),
+      /* Base gradient */
+      linear-gradient(to bottom, var(--background), var(--background-end));
   }
 
   @media (min-width: 768px) {
@@ -78,11 +85,11 @@
 
 @layer components {
   .glass {
-    @apply bg-white/90 dark:bg-black/45 backdrop-blur-md border border-slate-200/60 dark:border-white/10;
+    @apply bg-white/50 dark:bg-black/40 backdrop-blur-2xl border border-white/50 dark:border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)];
   }
 
   .glass-card {
-    @apply glass rounded-2xl shadow-[0_8px_32px_0_rgba(15,23,42,0.03)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.45)];
+    @apply glass rounded-3xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05),0_10px_20px_-5px_rgba(0,0,0,0.02)] dark:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5),0_10px_20px_-5px_rgba(0,0,0,0.3)];
   }
 
   .text-gradient {
