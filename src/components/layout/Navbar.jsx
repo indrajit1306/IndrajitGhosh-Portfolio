@@ -6,6 +6,7 @@ import { cn } from '../../utils/cn';
 import RecruiterDashboard from './RecruiterDashboard';
 
 const navLinks = [
+  { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
@@ -49,10 +50,9 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium hover:text-primary transition-colors relative group"
+                className="px-4 py-2 rounded-full text-sm font-medium border border-transparent hover:bg-primary/10 hover:border-white/100 hover:text-primary transition-all duration-300"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
             
