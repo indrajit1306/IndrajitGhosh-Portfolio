@@ -58,22 +58,22 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden border-t border-slate-100 dark:border-white/5 bg-white dark:bg-black/10">
+    <section id="about" className="py-12 lg:py-20 relative overflow-hidden border-t border-slate-100 dark:border-white/5">
       {/* Background decoration */}
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         {/* Main Background Card */}
-        <div className="glass-card bg-blue-50/80 dark:bg-blue-900/20 p-8 md:p-12 lg:p-16 border border-blue-200/50 dark:border-blue-500/20 relative overflow-hidden shadow-2xl shadow-blue-500/10">
+        <div className="glass-card bg-blue-50/80 dark:bg-blue-900/20 p-6 md:p-8 lg:p-12 border border-blue-200/50 dark:border-blue-500/20 relative overflow-hidden shadow-2xl shadow-blue-500/10">
           {/* Top accent line for the card */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary" />
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
               About <span className="text-gradient">Me</span>
@@ -88,32 +88,32 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, margin: "-100px" }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-5 space-y-8"
+              className="lg:col-span-5 space-y-6"
             >
-              <div className="bg-slate-50/50 dark:bg-black/20 rounded-2xl p-8 relative overflow-hidden group border border-slate-200/50 dark:border-white/5">
-                <h3 className="text-2xl font-bold mb-6 text-foreground">Who I Am</h3>
-                <p className="text-secondary leading-relaxed mb-6 font-light">
+              <div className="bg-slate-50/50 dark:bg-black/20 rounded-2xl p-6 md:p-8 relative overflow-hidden group border border-slate-200/50 dark:border-white/5">
+                <h3 className="text-2xl font-bold mb-4 md:mb-6 text-foreground">Who I Am</h3>
+                <p className="text-secondary leading-relaxed mb-4 md:mb-6 font-light">
                   Results-driven and detail-oriented Full Stack Developer with strong knowledge of web development,
                   software engineering, database management, and responsive UI design.
                 </p>
-                <p className="text-secondary leading-relaxed mb-8 font-light">
+                <p className="text-secondary leading-relaxed mb-6 md:mb-8 font-light">
                   Skilled in Java, JavaScript, Python, SQL, and modern frontend frameworks, with deep problem-solving abilities
                   and a passion for building interactive, scalable, and beautifully optimized digital applications.
                 </p>
 
                 {/* Quick Details List */}
-                <div className="space-y-4 pt-6 border-t border-slate-200/60 dark:border-white/10 text-sm">
+                <div className="space-y-3 md:space-y-4 pt-4 md:pt-6 border-t border-slate-200/60 dark:border-white/10 text-sm">
                   <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
                     <MapPin className="w-4 h-4 text-primary shrink-0" />
                     <span>Kolkata, West Bengal, India</span>
                   </div>
                   <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
                     <Mail className="w-4 h-4 text-primary shrink-0" />
-                    <a href="mailto:i64854054@gmail.com">i64854054@gmail.com</a>
+                    <a href="mailto:ijghosh13@gmail.com">ijghosh13@gmail.com</a>
                   </div>
                   <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
                     <Phone className="w-4 h-4 text-primary shrink-0" />
-                    <a href="tel:+919705787037">+91 9705787037</a>
+                    <a href="tel:+918240657314">+91 8240657314</a>
                   </div>
                   <div className="flex items-center gap-3 text-secondary hover:text-foreground transition-colors">
                     <ExternalLink className="w-4 h-4 text-primary shrink-0" />
@@ -129,14 +129,14 @@ export default function About() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, margin: "-100px" }}
-              className="lg:col-span-7 space-y-8"
+              className="lg:col-span-7 space-y-6"
             >
               <div className="flex items-center gap-3 mb-2">
                 <GraduationCap className="w-6 h-6 text-accent" />
                 <h3 className="text-2xl font-bold">Education</h3>
               </div>
 
-              <div ref={timelineRef} className="relative pl-6 space-y-10">
+              <div ref={timelineRef} className="relative pl-6 space-y-6 md:space-y-8">
                 {/* Unlit background timeline path line */}
                 <div className="absolute left-0 top-2 bottom-2 w-[1px] bg-slate-200 dark:bg-white/10" />
 
@@ -155,8 +155,8 @@ export default function About() {
                     {/* Bullet node on timeline */}
                     <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-accent transition-all duration-300 group-hover:scale-125 group-hover:bg-accent shadow-[0_0_12px_rgba(139,92,246,0.5)]" />
 
-                    <div className="bg-slate-50/50 dark:bg-black/20 rounded-2xl p-6 hover:border-accent/40 border border-slate-200/50 dark:border-white/5 transition-all duration-300">
-                      <div className="flex flex-wrap justify-between items-start gap-2 mb-3">
+                    <div className="bg-slate-50/50 dark:bg-black/20 rounded-2xl p-5 md:p-6 hover:border-accent/40 border border-slate-200/50 dark:border-white/5 transition-all duration-300">
+                      <div className="flex flex-wrap justify-between items-start gap-2 mb-2 md:mb-3">
                         <div>
                           <h4 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
                             {item.degree}
