@@ -38,7 +38,7 @@ const skillCategories = [
   {
     title: "Core Competencies",
     icon: Layers,
-    color: "from-amber-500 to-orange-600",
+    color: "from-blue-500 to-cyan-600",
     skills: [
       { name: "Software Engineering", level: 85 },
       { name: "UI/UX Design with AI", level: 90 },
@@ -67,20 +67,25 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-white dark:bg-black/20 border-t border-slate-100 dark:border-white/5">
+    <section id="skills" className="py-24 relative overflow-hidden border-t border-slate-100 dark:border-white/5">
       {/* Visual background accents */}
       <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-primary/5 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <motion.div
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+        {/* Main Background Card */}
+        <div className="glass-card p-6 md:p-8 lg:p-12 border border-slate-200/50 dark:border-white/5 relative overflow-hidden shadow-2xl">
+          {/* Top accent line for the card */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+
+          <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Core <span className="text-gradient">Skills</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
+            Core <span className="text-primary">Skills</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
           <p className="text-secondary mt-6 max-w-xl mx-auto font-light leading-relaxed">
@@ -103,7 +108,7 @@ export default function Skills() {
               "hover:shadow-[0_0_40px_rgba(59,130,246,0.25)] hover:border-blue-500/30",
               "hover:shadow-[0_0_40px_rgba(139,92,246,0.25)] hover:border-purple-500/30",
               "hover:shadow-[0_0_40px_rgba(16,185,129,0.25)] hover:border-emerald-500/30",
-              "hover:shadow-[0_0_40px_rgba(245,158,11,0.25)] hover:border-amber-500/30"
+              "hover:shadow-[0_0_40px_rgba(6,182,212,0.25)] hover:border-cyan-500/30"
             ];
             const shadowClass = shadowGlows[index % shadowGlows.length];
 
@@ -111,7 +116,7 @@ export default function Skills() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className={`glass-card p-8 transition-all duration-500 hover:-translate-y-1 relative group ${shadowClass}`}
+                className={`glass-card p-8 transition-all duration-500 hover:-translate-y-1 relative group overflow-hidden ${shadowClass} text-foreground`}
               >
                 {/* Visual hover border overlay */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 bg-gradient-to-br ${category.color} rounded-2xl pointer-events-none z-0`} />
@@ -153,6 +158,7 @@ export default function Skills() {
             );
           })}
         </motion.div>
+        </div>
       </div>
     </section>
   );
