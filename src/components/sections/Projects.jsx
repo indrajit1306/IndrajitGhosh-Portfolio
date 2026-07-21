@@ -74,7 +74,7 @@ export default function Projects() {
   const [stability, setStability] = useState(0);
   const [detectedEmotion, setDetectedEmotion] = useState(null);
   const [confidence, setConfidence] = useState(0);
-  const [activeThemeColor, setActiveThemeColor] = useState('#3b82f6'); // Dynamic glowing accent
+  const [activeThemeColor, setActiveThemeColor] = useState('#F37335'); // Dynamic glowing accent
   const [hudMessage, setHudMessage] = useState('BIOMETRIC HUD LAUNCHING');
 
   const videoRef = useRef(null);
@@ -107,7 +107,7 @@ export default function Projects() {
     setStability(0);
     setDetectedEmotion(null);
     setConfidence(0);
-    setActiveThemeColor('#3b82f6');
+    setActiveThemeColor('#F37335');
     setHudMessage('ACQUIRING MEDIA INTERFACES');
 
     try {
@@ -268,7 +268,7 @@ export default function Projects() {
         ctx.arc(pt.x * w, pt.y * h, 2, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.strokeStyle = isCameraActive ? 'rgba(16,185,129,0.08)' : 'rgba(59,130,246,0.08)';
+        ctx.strokeStyle = isCameraActive ? 'rgba(16,185,129,0.08)' : 'rgba(243,115,53,0.08)';
         ctx.lineWidth = 0.5;
         points.forEach(otherPt => {
           const dist = Math.hypot(pt.x - otherPt.x, pt.y - otherPt.y);
@@ -312,9 +312,7 @@ export default function Projects() {
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         {/* Main Background Card */}
-        <div className="glass-card bg-blue-50/80 dark:bg-blue-900/20 p-6 md:p-8 lg:p-12 border border-blue-200/50 dark:border-blue-500/20 relative overflow-hidden shadow-2xl shadow-blue-500/10">
-          {/* Top accent line for the card */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl">
 
           <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -376,7 +374,7 @@ export default function Projects() {
                     </div>
                     <button
                       onClick={startCamera}
-                      className="px-6 py-2.5 bg-primary text-white hover:bg-primary/80 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(59,130,246,0.3)] cursor-pointer"
+                      className="px-6 py-2.5 bg-primary text-white hover:bg-primary/80 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 active:scale-95 shadow-[0_0_15px_var(--primary-glow)] cursor-pointer"
                     >
                       Start Camera Link
                     </button>
@@ -507,7 +505,7 @@ export default function Projects() {
                   <button
                     onClick={() => setSelectedRole('ml')}
                     className={`flex-1 py-3 px-4 rounded-lg font-bold text-[10px] tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer ${selectedRole === 'ml'
-                      ? 'bg-primary text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]'
+                      ? 'bg-primary text-white shadow-[0_0_15px_var(--primary-glow)]'
                       : 'text-secondary hover:text-foreground'
                       }`}
                   >
@@ -517,7 +515,7 @@ export default function Projects() {
                   <button
                     onClick={() => setSelectedRole('frontend')}
                     className={`flex-1 py-3 px-4 rounded-lg font-bold text-[10px] tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer ${selectedRole === 'frontend'
-                      ? 'bg-accent text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]'
+                      ? 'bg-accent text-white shadow-[0_0_15px_rgba(255,181,115,0.5)]'
                       : 'text-secondary hover:text-foreground'
                       }`}
                   >
