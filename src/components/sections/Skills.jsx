@@ -5,7 +5,7 @@ const skillCategories = [
   {
     title: "Programming Languages",
     icon: Code,
-    color: "from-blue-500 to-indigo-600",
+    color: "from-primary to-accent",
     skills: [
       { name: "Java", level: 85 },
       { name: "Python", level: 80 },
@@ -16,7 +16,7 @@ const skillCategories = [
   {
     title: "Frontend Technologies",
     icon: Layout,
-    color: "from-purple-500 to-pink-600",
+    color: "from-accent to-primary",
     skills: [
       { name: "React", level: 85 },
       { name: "HTML5", level: 95 },
@@ -27,7 +27,7 @@ const skillCategories = [
   {
     title: "Database Management",
     icon: Database,
-    color: "from-emerald-500 to-teal-600",
+    color: "from-primary to-orange-400",
     skills: [
       { name: "MySQL / PostgreSQL", level: 85 },
       { name: "Database Design", level: 80 },
@@ -38,7 +38,7 @@ const skillCategories = [
   {
     title: "Core Competencies",
     icon: Layers,
-    color: "from-blue-500 to-cyan-600",
+    color: "from-orange-400 to-primary",
     skills: [
       { name: "Software Engineering", level: 85 },
       { name: "UI/UX Design with AI", level: 90 },
@@ -73,9 +73,7 @@ export default function Skills() {
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         {/* Main Background Card */}
-        <div className="glass-card p-6 md:p-8 lg:p-12 border border-slate-200/50 dark:border-white/5 relative overflow-hidden shadow-2xl">
-          {/* Top accent line for the card */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl">
 
           <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -103,20 +101,11 @@ export default function Skills() {
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
 
-            // Map category index to custom premium outside-the-box shadow glow classes
-            const shadowGlows = [
-              "hover:shadow-[0_0_40px_rgba(59,130,246,0.25)] hover:border-blue-500/30",
-              "hover:shadow-[0_0_40px_rgba(139,92,246,0.25)] hover:border-purple-500/30",
-              "hover:shadow-[0_0_40px_rgba(16,185,129,0.25)] hover:border-emerald-500/30",
-              "hover:shadow-[0_0_40px_rgba(6,182,212,0.25)] hover:border-cyan-500/30"
-            ];
-            const shadowClass = shadowGlows[index % shadowGlows.length];
-
             return (
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className={`glass-card p-8 transition-all duration-500 hover:-translate-y-1 relative group overflow-hidden ${shadowClass} text-foreground`}
+                className={`glass-card p-8 transition-all duration-500 hover:-translate-y-1 relative group overflow-hidden hover:shadow-[0_0_40px_rgba(243,115,53,0.25)] hover:border-primary/30 text-foreground`}
               >
                 {/* Visual hover border overlay */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 bg-gradient-to-br ${category.color} rounded-2xl pointer-events-none z-0`} />
