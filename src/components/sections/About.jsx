@@ -58,15 +58,14 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-12 lg:py-20 relative overflow-hidden border-t border-slate-100 dark:border-white/5">
+    <section id="about" className="pt-0 pb-12 lg:pb-20 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         {/* Main Background Card */}
-        <div className="glass-card bg-blue-50/80 dark:bg-blue-900/20 p-6 md:p-8 lg:p-12 border border-blue-200/50 dark:border-blue-500/20 relative overflow-hidden shadow-2xl shadow-blue-500/10">
-          {/* Top accent line for the card */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl">
+
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
