@@ -19,6 +19,7 @@ export default {
         },
         secondary: 'var(--secondary)',
         accent: 'var(--accent)',
+        'brand-orange': '#F37335',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
