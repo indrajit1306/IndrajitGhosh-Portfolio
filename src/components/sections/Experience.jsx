@@ -91,9 +91,8 @@ export default function Experience() {
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         {/* Main Background Card */}
-        <div className="glass-card bg-blue-50/80 dark:bg-blue-900/20 p-6 md:p-8 lg:p-12 border border-blue-200/50 dark:border-blue-500/20 relative overflow-hidden shadow-2xl shadow-blue-500/10">
-          {/* Top accent line for the card */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl">
+
 
           <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -199,7 +198,7 @@ export default function Experience() {
                   className="relative group"
                 >
                   {/* Timeline bullet node */}
-                  <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-accent transition-all duration-300 group-hover:scale-125 group-hover:bg-accent shadow-[0_0_12px_rgba(139,92,246,0.5)]" />
+                  <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-accent transition-all duration-300 group-hover:scale-125 group-hover:bg-accent shadow-[0_0_12px_var(--primary-glow)]" />
 
                   <div className="glass-card p-6 border border-slate-200/50 dark:border-white/10 hover:border-accent/40 transition-all duration-300">
                     <div className="flex flex-wrap justify-between items-start gap-2 mb-3">
