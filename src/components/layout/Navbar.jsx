@@ -34,66 +34,77 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          scrolled ? 'py-4 glass border-b border-white/10' : 'py-6 bg-transparent'
-        )}
+        className="fixed top-8 left-0 right-0 mx-auto z-50 w-[92%] max-w-[1100px] transition-all duration-300"
       >
-        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold tracking-tighter text-gradient">
-            Port<span className="text-foreground">folio.</span>
-          </a>
-
+        <div className="bg-[#1C1C1C] text-white rounded-[40px] px-2 py-2 flex items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.12)] w-full">
+          
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-4 py-2 rounded-full text-sm font-medium border border-transparent hover:bg-primary/10 hover:border-white/100 hover:text-primary transition-all duration-300"
-              >
-                {link.name}
-              </a>
-            ))}
+          <nav className="hidden md:grid grid-cols-3 items-center w-full">
             
-            <button
-              onClick={() => setRecruiterOpen(true)}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors text-sm font-medium"
-            >
-              <Sparkles className="w-4 h-4" />
-              For Recruiters
-            </button>
+            {/* Left side links */}
+            <div className="flex items-center justify-start gap-4 lg:gap-10 pl-2">
+              <a href="#home" className="px-8 py-2.5 rounded-full text-[15px] font-medium bg-[#F37335] text-white shadow-sm">
+                Home
+              </a>
+              <a href="#about" className="text-[15px] font-medium text-[#E0E0E0] hover:text-white transition-all">
+                About
+              </a>
+              <a href="#skills" className="text-[15px] font-medium text-[#E0E0E0] hover:text-white transition-all">
+                Skills
+              </a>
+            </div>
 
-            <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full hover:bg-white/10 transition-colors"
-              aria-label="Toggle Theme"
-            >
-              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
+            {/* Logo Center */}
+            <div className="flex items-center justify-center">
+              <a href="#" className="flex items-center gap-2">
+                <span className="bg-[#F37335] text-white w-9 h-9 rounded-full flex items-center justify-center font-bold text-[15px]">IG</span>
+                <span className="text-[18px] font-bold tracking-wider">INDRAJIT</span>
+              </a>
+            </div>
+
+            {/* Right side links */}
+            <div className="flex items-center justify-end gap-4 lg:gap-8 pr-6">
+              <a href="#projects" className="text-[15px] font-medium text-[#E0E0E0] hover:text-white transition-all">
+                Projects
+              </a>
+              <a href="#experience" className="text-[15px] font-medium text-[#E0E0E0] hover:text-white transition-all">
+                Experience
+              </a>
+              <a href="#contact" className="text-[15px] font-medium text-[#E0E0E0] hover:text-white transition-all">
+                Contact
+              </a>
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 rounded-full hover:bg-white/10 transition-colors text-[#E0E0E0] hover:text-white flex items-center justify-center"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              </button>
+            </div>
+
           </nav>
 
           {/* Mobile Toggle */}
-          <div className="flex items-center gap-3 md:hidden">
-            <button
-              onClick={() => setRecruiterOpen(true)}
-              className="p-2 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
-              aria-label="For Recruiters"
-            >
-              <Sparkles className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full hover:bg-white/10 transition-colors"
-            >
-              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+          <div className="flex items-center md:hidden pr-4 w-full justify-between">
+             <a href="#" className="flex items-center gap-2 ml-4">
+                <span className="bg-[#F37335] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-[14px]">IG</span>
+                <span className="text-[16px] font-bold tracking-wider">INDRAJIT</span>
+              </a>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 text-white hover:bg-white/10 rounded-full transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 text-white hover:bg-white/10 rounded-full transition-colors"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -101,10 +112,10 @@ export default function Navbar() {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden glass border-b border-white/10"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="md:hidden mt-4 bg-[#1C1C1C] rounded-2xl overflow-hidden shadow-2xl mx-auto w-full"
             >
               <div className="flex flex-col px-6 py-4 space-y-4">
                 {navLinks.map((link) => (
@@ -112,7 +123,7 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-lg font-medium hover:text-primary transition-colors"
+                    className="text-lg font-medium text-[#A0A0A0] hover:text-white transition-colors"
                   >
                     {link.name}
                   </a>
@@ -123,6 +134,7 @@ export default function Navbar() {
         </AnimatePresence>
       </motion.header>
 
+      {/* Hidden recruiter dashboard, can be accessed elsewhere if needed */}
       <RecruiterDashboard 
         isOpen={recruiterOpen} 
         onClose={() => setRecruiterOpen(false)} 
