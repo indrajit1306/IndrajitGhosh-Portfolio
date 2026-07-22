@@ -7,7 +7,7 @@ export default function ThankYou() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, margin: "-50px" }}
       transition={{ duration: 0.7 }}
-      className="relative overflow-hidden rounded-2xl bg-slate-50 dark:bg-[#060907] border border-slate-200 dark:border-white/5 pt-8 pb-0 md:pt-16 md:pb-16 px-6 md:px-0 md:pl-16 md:min-h-[450px] flex flex-col md:flex-row items-center md:items-center transition-colors duration-300"
+      className="relative overflow-hidden rounded-2xl bg-slate-50 dark:bg-[#060907] border border-slate-200 dark:border-white/5 pt-8 pb-0 md:pt-16 md:pb-16 px-6 md:px-0 md:pl-16 md:min-h-[450px] flex flex-col md:flex-row items-center md:items-center transition-colors duration-300 flex-1 w-full"
     >
       {/* Background Gradient */}
       <div className="absolute top-0 left-0 w-full md:w-3/5 h-full bg-gradient-to-b md:bg-gradient-to-r from-emerald-100/80 via-emerald-50/50 dark:from-emerald-900/60 dark:via-emerald-900/20 to-transparent pointer-events-none transition-colors duration-300" />
