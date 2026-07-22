@@ -58,13 +58,13 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="pt-0 pb-12 lg:pb-20 relative overflow-hidden">
+    <section id="about" className="min-h-[100dvh] pt-0 pb-0 lg:pb-0 relative overflow-hidden flex flex-col">
       {/* Background decoration */}
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
         {/* Main Background Card */}
-        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl">
+        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
 
 
           <motion.div
