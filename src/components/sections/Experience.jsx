@@ -85,13 +85,25 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-24 relative overflow-hidden border-t border-slate-100 dark:border-white/5">
+    <section id="experience" className="min-h-[100dvh] pt-0 pb-0 relative overflow-hidden flex flex-col">
       {/* Background glow */}
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
         {/* Main Background Card */}
-        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl">
+        <div 
+          className="dark glass-card p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-2xl flex-1 flex flex-col justify-center rounded-[2.5rem] text-foreground"
+          style={{
+            backgroundColor: '#0a0a0a',
+            backgroundImage: `
+              radial-gradient(circle at 100% 0%, rgba(243, 115, 53, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 0% 100%, rgba(243, 115, 53, 0.1) 0%, transparent 40%),
+              url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-200 200 C 200 -100 600 500 1200 100' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='80'/%3E%3Cpath d='M-200 400 C 200 100 600 700 1200 300' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='100'/%3E%3Cpath d='M-200 600 C 200 300 600 900 1200 500' fill='none' stroke='rgba(255,255,255,0.015)' stroke-width='120'/%3E%3Cpath d='M-200 800 C 200 500 600 1100 1200 700' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='90'/%3E%3C/svg%3E")
+            `,
+            backgroundSize: '100% 100%, 100% 100%, cover',
+            backgroundPosition: 'center, center, center',
+          }}
+        >
 
 
           <motion.div
@@ -99,7 +111,7 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mt-8 lg:mt-20 mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Experience & <span className="text-gradient">Training</span>
