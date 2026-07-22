@@ -63,7 +63,7 @@ export default function WhyHire() {
   };
 
   return (
-    <section id="why-hire" className="min-h-screen pt-32 pb-24 relative overflow-hidden">
+    <section id="why-hire" className="min-h-[100dvh] pt-0 pb-0 relative overflow-hidden flex flex-col">
       {/* Background elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
@@ -76,8 +76,8 @@ export default function WhyHire() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
+        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -105,7 +105,7 @@ export default function WhyHire() {
               <motion.div
                 key={reason.id}
                 variants={itemVariants}
-                className="glass-card bg-slate-50 dark:bg-zinc-800/50 p-8 border border-transparent dark:border-white/5 hover:border-primary/30 transition-colors flex flex-col gap-6 group"
+                className="glass-card bg-background dark:bg-zinc-800/80 p-8 border border-transparent dark:border-white/5 hover:border-primary/30 transition-colors flex flex-col gap-6 group"
               >
                 <div className="w-12 h-12 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm">
                   {reason.icon}
