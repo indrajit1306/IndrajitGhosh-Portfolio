@@ -67,20 +67,20 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden border-t border-slate-100 dark:border-white/5">
+    <section id="skills" className="min-h-[100dvh] pt-0 pb-0 relative overflow-hidden flex flex-col">
       {/* Visual background accents */}
       <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-primary/5 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
         {/* Main Background Card */}
-        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl">
+        <div className="glass-card bg-background dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
 
           <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mt-8 lg:mt-20 mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
             Core <span className="text-primary">Skills</span>
