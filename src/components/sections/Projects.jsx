@@ -304,22 +304,22 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden border-t border-slate-100 dark:border-white/5">
+    <section id="projects" className="min-h-[100dvh] pt-0 pb-0 relative overflow-hidden flex flex-col">
       {/* Dynamic colored background light matching scanning accent */}
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] rounded-full blur-[160px] pointer-events-none transition-colors duration-1000"
         style={{ backgroundColor: `${activeThemeColor}10` }}
       />
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
         {/* Main Background Card */}
-        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl">
+        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
 
           <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 mt-8 lg:mt-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Featured <span className="text-gradient">Projects</span>
