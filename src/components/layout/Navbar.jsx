@@ -34,7 +34,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="fixed top-8 left-0 right-0 mx-auto z-50 w-[92%] max-w-[1100px] transition-all duration-300"
+        className="fixed top-8 left-0 right-0 mx-auto z-50 w-[95%] max-w-[1250px] transition-all duration-300"
       >
         <div className="bg-[#1C1C1C] text-white rounded-[40px] px-2 py-2 flex items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.12)] w-full">
           
@@ -42,14 +42,14 @@ export default function Navbar() {
           <nav className="hidden md:grid grid-cols-3 items-center w-full">
             
             {/* Left side links */}
-            <div className="flex items-center justify-start gap-4 lg:gap-10 pl-2">
-              <a href="#home" className="px-8 py-2.5 rounded-full text-[15px] font-medium bg-[#F37335] text-white shadow-sm">
+            <div className="flex items-center justify-start gap-2 lg:gap-6 pl-4">
+              <a href="#home" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
                 Home
               </a>
-              <a href="#about" className="text-[15px] font-medium text-[#E0E0E0] hover:text-white transition-all">
+              <a href="#about" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
                 About
               </a>
-              <a href="#skills" className="text-[15px] font-medium text-[#E0E0E0] hover:text-white transition-all">
+              <a href="#skills" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
                 Skills
               </a>
             </div>
@@ -57,20 +57,20 @@ export default function Navbar() {
             {/* Logo Center */}
             <div className="flex items-center justify-center">
               <a href="#" className="flex items-center gap-2">
-                <span className="bg-[#F37335] text-white w-9 h-9 rounded-full flex items-center justify-center font-bold text-[15px]">IG</span>
+                <span className="bg-[#F37335] text-white w-9 h-9 rounded-full flex items-center justify-center font-bold text-[15px] shadow-sm">IG</span>
                 <span className="text-[18px] font-bold tracking-wider">INDRAJIT</span>
               </a>
             </div>
 
             {/* Right side links */}
-            <div className="flex items-center justify-end gap-4 lg:gap-8 pr-6">
-              <a href="#projects" className="text-[15px] font-medium text-[#E0E0E0] hover:text-white transition-all">
+            <div className="flex items-center justify-end gap-2 lg:gap-6 pr-6">
+              <a href="#projects" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
                 Projects
               </a>
-              <a href="#experience" className="text-[15px] font-medium text-[#E0E0E0] hover:text-white transition-all">
+              <a href="#experience" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
                 Experience
               </a>
-              <a href="#contact" className="text-[15px] font-medium text-[#E0E0E0] hover:text-white transition-all">
+              <a href="#contact" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
                 Contact
               </a>
               <button
