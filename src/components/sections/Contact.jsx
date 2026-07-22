@@ -53,14 +53,15 @@ export default function Contact() {
   });
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden border-t border-slate-100 dark:border-white/5">
+    <>
+    <section id="contact" className="min-h-[100dvh] pt-0 pb-0 relative overflow-hidden flex flex-col">
       {/* Visual background lights */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
         {/* Main Background Card */}
-        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl">
+        <div className="glass-card bg-background dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -224,12 +225,16 @@ export default function Contact() {
           </div>
 
         </div>
-
-        {/* Thank You Section */}
-        <div className="mt-20">
-          <ThankYou />
         </div>
       </div>
     </section>
+
+    {/* Thank You Section */}
+    <section className="min-h-[100dvh] pt-0 pb-0 relative overflow-hidden flex flex-col">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col -mt-px relative z-20">
+        <ThankYou />
+      </div>
+    </section>
+    </>
   );
 }
