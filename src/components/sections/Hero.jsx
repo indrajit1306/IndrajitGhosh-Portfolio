@@ -24,6 +24,20 @@ export default function Hero() {
     },
   };
 
+  const headline3DVariants = {
+    hidden: { opacity: 0, rotateX: 80, y: 40, z: -50 },
+    visible: {
+      opacity: 1,
+      rotateX: 0,
+      y: 0,
+      z: 0,
+      transition: {
+        duration: 1.2,
+        ease: [0.2, 0.65, 0.3, 0.9],
+      },
+    },
+  };
+
   return (
     <section id="home" className="relative w-full h-[100dvh] min-h-[600px] md:min-h-[700px] pt-28 md:pt-32 pb-0 overflow-hidden flex flex-col items-center bg-background transition-colors duration-300 font-sans">
       <motion.div 
@@ -54,23 +68,27 @@ export default function Hero() {
           </motion.div>
 
           {/* Headline */}
-          <motion.div variants={itemVariants} className="relative mb-0 w-full max-w-3xl mx-auto z-20">
+          <div className="relative mb-0 w-full max-w-3xl mx-auto z-20" style={{ perspective: 1200 }}>
             {/* Decorative strokes Bottom Left */}
             <motion.svg 
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
-              className="absolute bottom-4 -left-8 md:-left-16 w-12 h-12 text-primary" viewBox="0 0 50 50" fill="none"
+              className="absolute bottom-4 -left-8 md:-left-16 w-12 h-12 text-primary z-0" viewBox="0 0 50 50" fill="none"
             >
               <path d="M45 10 L20 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
               <path d="M50 25 L25 45" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
             </motion.svg>
             
-            <h1 className="text-[3.8rem] sm:text-[5rem] md:text-[6.5rem] font-medium tracking-tight leading-[1.05] text-foreground transition-colors">
-              I'm <span className="text-primary font-semibold">Indrajit</span>,<br />
-              Product Designer
+            <h1 className="relative z-10 text-[3.8rem] sm:text-[5rem] md:text-[6.5rem] font-medium tracking-tight leading-[1.05] text-foreground transition-colors flex flex-col items-center">
+              <motion.span variants={headline3DVariants} style={{ transformOrigin: "center center -50px" }} className="block">
+                I'm <span className="text-primary font-semibold">Indrajit</span>,
+              </motion.span>
+              <motion.span variants={headline3DVariants} style={{ transformOrigin: "center center -50px" }} className="block">
+                Product Designer
+              </motion.span>
             </h1>
-          </motion.div>
+          </div>
         </div>
 
         {/* Center Content: Portrait & Background Arch */}
