@@ -26,40 +26,55 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative w-full h-[100dvh] min-h-[600px] md:min-h-[700px] pt-28 md:pt-32 pb-0 overflow-hidden flex flex-col items-center bg-background transition-colors duration-300 font-sans">
-      <div className="container mx-auto px-4 relative z-10 w-full max-w-[1100px] flex flex-col items-center flex-1 min-h-0">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="container mx-auto px-4 relative z-10 w-full max-w-[1100px] flex flex-col items-center flex-1 min-h-0"
+      >
         
         {/* Top Text Section */}
         <div className="flex flex-col items-center text-center w-full relative z-20 mt-2 md:mt-4 shrink-0">
           
           {/* Hello Badge */}
-          <div className="relative inline-flex items-center justify-center mb-4 md:mb-6">
+          <motion.div variants={itemVariants} className="relative inline-flex items-center justify-center mb-4 md:mb-6">
             {/* Decorative strokes Top Right */}
-            <svg className="absolute -top-6 -right-6 w-8 h-8 text-primary" viewBox="0 0 50 50" fill="none">
+            <motion.svg 
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
+              className="absolute -top-6 -right-6 w-8 h-8 text-primary" viewBox="0 0 50 50" fill="none"
+            >
               <path d="M5 45 L25 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
               <path d="M20 50 L40 25" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-            </svg>
+            </motion.svg>
             <div className="px-5 py-1.5 rounded-[30px] border border-slate-800 dark:border-white/20 bg-white dark:bg-zinc-800 text-[15px] font-medium text-foreground z-10 transition-colors">
               Hello!
             </div>
-          </div>
+          </motion.div>
 
           {/* Headline */}
-          <div className="relative mb-0 w-full max-w-3xl mx-auto z-20">
+          <motion.div variants={itemVariants} className="relative mb-0 w-full max-w-3xl mx-auto z-20">
             {/* Decorative strokes Bottom Left */}
-            <svg className="absolute bottom-4 -left-8 md:-left-16 w-12 h-12 text-primary" viewBox="0 0 50 50" fill="none">
+            <motion.svg 
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
+              className="absolute bottom-4 -left-8 md:-left-16 w-12 h-12 text-primary" viewBox="0 0 50 50" fill="none"
+            >
               <path d="M45 10 L20 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
               <path d="M50 25 L25 45" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-            </svg>
+            </motion.svg>
             
             <h1 className="text-[3.8rem] sm:text-[5rem] md:text-[6.5rem] font-medium tracking-tight leading-[1.05] text-foreground transition-colors">
               I'm <span className="text-primary font-semibold">Indrajit</span>,<br />
               Product Designer
             </h1>
-          </div>
+          </motion.div>
         </div>
 
         {/* Center Content: Portrait & Background Arch */}
-        <div className="relative w-full flex justify-center mt-auto pt-6 flex-1 min-h-0">
+        <motion.div variants={itemVariants} className="relative w-full flex justify-center mt-auto pt-6 flex-1 min-h-0">
           
           {/* Orange Arch Background - Flush with bottom */}
           <div className="absolute bottom-0 w-[95%] sm:w-[600px] md:w-[800px] h-[80%] max-h-[450px] bg-accent rounded-t-full z-0 transition-colors" />
@@ -115,8 +130,8 @@ export default function Hero() {
               Hire me
             </a>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
