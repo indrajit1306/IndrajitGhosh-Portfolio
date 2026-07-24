@@ -64,21 +64,25 @@ export default function About() {
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
         {/* Main Background Card */}
-        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
+        <div className="glass-card bg-background/40 dark:bg-background-end/40 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
 
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8 md:mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              About <span className="text-gradient">Me</span>
-            </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
-          </motion.div>
+          <div className="overflow-hidden whitespace-nowrap w-full mb-8 md:mb-12 pt-4 md:pt-6">
+            <motion.div
+              animate={{ x: ["-50%", "0%"] }}
+              transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+              className="w-max flex gap-12 items-center"
+            >
+              {[...Array(12)].map((_, i) => (
+                <div key={i} className="flex items-center gap-12">
+                  <h2 className="text-4xl md:text-5xl font-bold tracking-tight py-2">
+                    About <span className="text-gradient">Me</span>
+                  </h2>
+                  <div className="w-4 h-4 bg-gradient-to-r from-primary to-accent rounded-full" />
+                </div>
+              ))}
+            </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Summary and Profile Details */}
