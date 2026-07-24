@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Star } from 'lucide-react';
+import { ArrowUpRight, Star, Download } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const designations = ["Product Designer", "UI/UX Expert", "Creative Thinker", "Frontend Developer"];
@@ -41,7 +41,7 @@ const Typewriter = () => {
       {currentText}
       <motion.span 
         animate={{ opacity: [1, 0] }}
-        transition={{ repeat: Infinity, duration: 0.2, ease: "linear" }}
+        transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
         className="inline-block w-[4px] h-[0.9em] bg-foreground ml-2 rounded-sm"
       />
     </span>
@@ -191,19 +191,26 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Right Experience Block */}
-          <div className="absolute right-0 top-[30%] w-48 text-right hidden lg:block z-20">
-            <div className="flex justify-end gap-1 text-primary mb-2 transition-colors">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-[22px] h-[22px] fill-current" />
-              ))}
+          {/* Right Status Block */}
+          <div className="absolute right-0 top-[30%] w-52 text-right hidden lg:block z-20">
+            <div className="flex justify-end items-center gap-2 mb-2">
+              <span className="text-[13px] uppercase tracking-wider font-semibold text-green-500 dark:text-green-400">Status</span>
+              <div className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+              </div>
             </div>
-            <p className="text-[34px] font-bold text-foreground leading-none mb-1 transition-colors">
-              10 Years
+            <p className="text-[28px] font-bold text-foreground leading-tight mb-1 transition-colors">
+              Available
             </p>
             <p className="text-[15px] font-medium text-secondary transition-colors">
-              Experince
+              for New Opportunities
             </p>
+            <div className="flex justify-end gap-1 text-primary mt-3 transition-colors">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-[18px] h-[18px] fill-current" />
+              ))}
+            </div>
           </div>
 
           {/* Bottom Action Pill */}
@@ -213,6 +220,9 @@ export default function Hero() {
             </a>
             <a href="#contact" className="px-8 py-3.5 text-foreground hover:bg-primary hover:text-white rounded-full font-medium text-[16px] transition-all hover:scale-105">
               Hire me
+            </a>
+            <a href="/resume.pdf" download className="px-8 py-3.5 text-foreground hover:bg-primary hover:text-white rounded-full font-medium text-[16px] flex items-center gap-2 transition-all hover:scale-105">
+              Resume <Download className="w-[18px] h-[18px] opacity-90" />
             </a>
           </div>
         </motion.div>
