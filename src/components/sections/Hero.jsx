@@ -1,5 +1,52 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Star } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
+const designations = ["Product Designer", "UI/UX Expert", "Creative Thinker", "Frontend Developer"];
+
+const Typewriter = () => {
+  const [currentText, setCurrentText] = useState('');
+  const [designationIndex, setDesignationIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const currentDesignation = designations[designationIndex];
+      
+      if (isDeleting) {
+        setCurrentText(currentDesignation.substring(0, currentText.length - 1));
+        setTypingSpeed(20);
+      } else {
+        setCurrentText(currentDesignation.substring(0, currentText.length + 1));
+        setTypingSpeed(50);
+      }
+
+      if (!isDeleting && currentText === currentDesignation) {
+        setTimeout(() => setIsDeleting(true), 1200);
+        setTypingSpeed(1200);
+      } else if (isDeleting && currentText === '') {
+        setIsDeleting(false);
+        setDesignationIndex((prev) => (prev + 1) % designations.length);
+        setTypingSpeed(300);
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, designationIndex, typingSpeed]);
+
+  return (
+    <span className="inline-flex items-center">
+      {currentText}
+      <motion.span 
+        animate={{ opacity: [1, 0] }}
+        transition={{ repeat: Infinity, duration: 0.2, ease: "linear" }}
+        className="inline-block w-[4px] h-[0.9em] bg-foreground ml-2 rounded-sm"
+      />
+    </span>
+  );
+};
 
 export default function Hero() {
   const containerVariants = {
@@ -24,19 +71,28 @@ export default function Hero() {
     },
   };
 
-  const headline3DVariants = {
-    hidden: { opacity: 0, rotateX: 80, y: 40, z: -50 },
+  const nameContainerVariants = {
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      rotateX: 0,
-      y: 0,
-      z: 0,
       transition: {
-        duration: 1.2,
-        ease: [0.2, 0.65, 0.3, 0.9],
+        staggerChildren: 0.03,
+        delayChildren: 0.2,
       },
     },
   };
+
+  const letterVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", stiffness: 150 },
+    },
+  };
+
+  const text1 = "I'm ";
+  const text2 = "Indrajit,";
 
   return (
     <section id="home" className="relative w-full h-[100dvh] min-h-[600px] md:min-h-[700px] pt-28 md:pt-32 pb-0 overflow-hidden flex flex-col items-center bg-background transition-colors duration-300 font-sans">
@@ -81,11 +137,22 @@ export default function Hero() {
             </motion.svg>
             
             <h1 className="relative z-10 text-[3.8rem] sm:text-[5rem] md:text-[6.5rem] font-medium tracking-tight leading-[1.05] text-foreground transition-colors flex flex-col items-center">
-              <motion.span variants={headline3DVariants} style={{ transformOrigin: "center center -50px" }} className="block">
-                I'm <span className="text-primary font-semibold">Indrajit</span>,
+              <motion.span variants={nameContainerVariants} className="block mb-2">
+                {Array.from(text1).map((char, index) => (
+                  <motion.span key={`t1-${index}`} variants={letterVariants} className="inline-block">
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+                <span className="text-primary font-semibold inline-block">
+                  {Array.from(text2).map((char, index) => (
+                    <motion.span key={`t2-${index}`} variants={letterVariants} className="inline-block">
+                      {char}
+                    </motion.span>
+                  ))}
+                </span>
               </motion.span>
-              <motion.span variants={headline3DVariants} style={{ transformOrigin: "center center -50px" }} className="block">
-                Product Designer
+              <motion.span variants={itemVariants} className="block text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] whitespace-nowrap h-[1.2em] font-normal">
+                <Typewriter />
               </motion.span>
             </h1>
           </div>
@@ -141,10 +208,10 @@ export default function Hero() {
 
           {/* Bottom Action Pill */}
           <div className="absolute bottom-8 md:bottom-12 z-30 left-1/2 -translate-x-1/2 bg-white/25 dark:bg-black/25 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-[40px] p-[6px] flex items-center shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] transition-colors">
-            <a href="#projects" className="px-8 py-3.5 bg-primary text-white rounded-full font-medium text-[16px] flex items-center gap-2 transition-transform hover:scale-105 shadow-md">
+            <a href="#projects" className="px-8 py-3.5 text-foreground hover:bg-primary hover:text-white rounded-full font-medium text-[16px] flex items-center gap-2 transition-all hover:scale-105">
               Portfolio <ArrowUpRight className="w-[18px] h-[18px] opacity-90" />
             </a>
-            <a href="#contact" className="px-8 py-3.5 text-foreground rounded-full font-medium text-[16px] hover:bg-white/30 dark:hover:bg-white/10 transition-colors">
+            <a href="#contact" className="px-8 py-3.5 text-foreground hover:bg-primary hover:text-white rounded-full font-medium text-[16px] transition-all hover:scale-105">
               Hire me
             </a>
           </div>
