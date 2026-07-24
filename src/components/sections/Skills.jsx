@@ -43,7 +43,8 @@ const skillCategories = [
       { name: "Software Engineering", level: 85 },
       { name: "UI/UX Design with AI", level: 90 },
       { name: "REST APIs", level: 85 },
-      { name: "Git & Version Control", level: 85 }
+      { name: "Git & Version Control", level: 85 },
+      { name: "AWS Cloud", level: 80 }
     ]
   }
 ];
@@ -119,27 +120,14 @@ export default function Skills() {
                     <h3 className="text-xl font-bold tracking-wide">{category.title}</h3>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="flex flex-wrap gap-3">
                     {category.skills.map((skill, sIndex) => (
-                      <div key={sIndex} className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span className="font-medium text-secondary group-hover:text-foreground transition-colors duration-300">
-                            {skill.name}
-                          </span>
-                          <span className="text-xs text-primary font-mono">{skill.level}%</span>
-                        </div>
-
-                        {/* Interactive visual progress bar */}
-                        <div className="h-1.5 w-full bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            viewport={{ once: false }}
-                            transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
-                            className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
-                          />
-                        </div>
-                      </div>
+                      <span 
+                        key={sIndex} 
+                        className="px-4 py-2 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full text-sm font-medium text-secondary hover:text-primary transition-all duration-300 hover:scale-105 hover:border-primary/50 hover:bg-primary/10 cursor-default shadow-sm"
+                      >
+                        {skill.name}
+                      </span>
                     ))}
                   </div>
                 </div>
