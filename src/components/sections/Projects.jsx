@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Music, Camera, Cpu, Laptop, Check, RotateCcw, VideoOff, Terminal } from 'lucide-react';
+import SectionHeading from '../ui/SectionHeading';
 
 const GithubIcon = (props) => (
   <svg
@@ -314,21 +315,18 @@ export default function Projects() {
         {/* Main Background Card */}
         <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
 
-          <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16 mt-8 lg:mt-20"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Featured <span className="text-gradient">Projects</span>
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
-          <p className="text-secondary mt-6 max-w-xl mx-auto font-light leading-relaxed">
+        <div className="text-center mb-16 mt-8 lg:mt-20">
+          <SectionHeading title1="Featured" title2="Projects" />
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-secondary mt-2 max-w-xl mx-auto font-light leading-relaxed"
+          >
             Deep dive into my major software engineering achievements, interactive features, and technical architecture.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* Project Card Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
