@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { GraduationCap, Calendar, MapPin, Mail, Phone, ExternalLink } from 'lucide-react';
+import SectionHeading from '../ui/SectionHeading';
 
 const education = [
   {
@@ -67,22 +68,7 @@ export default function About() {
         <div className="glass-card bg-background/40 dark:bg-background-end/40 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
 
 
-          <div className="overflow-hidden whitespace-nowrap w-full mb-8 md:mb-12 pt-4 md:pt-6">
-            <motion.div
-              animate={{ x: ["-50%", "0%"] }}
-              transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-              className="w-max flex gap-12 items-center"
-            >
-              {[...Array(12)].map((_, i) => (
-                <div key={i} className="flex items-center gap-12">
-                  <h2 className="text-4xl md:text-5xl font-bold tracking-tight py-2">
-                    About <span className="text-gradient">Me</span>
-                  </h2>
-                  <div className="w-4 h-4 bg-gradient-to-r from-primary to-accent rounded-full" />
-                </div>
-              ))}
-            </motion.div>
-          </div>
+          <SectionHeading title1="About" title2="Me" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Summary and Profile Details */}
