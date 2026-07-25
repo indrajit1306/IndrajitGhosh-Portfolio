@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Briefcase, Award, CheckCircle2, Calendar, MapPin } from 'lucide-react';
+import SectionHeading from '../ui/SectionHeading';
 
 const experiences = [
   {
@@ -106,18 +107,9 @@ export default function Experience() {
         >
 
 
-          <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mt-8 lg:mt-20 mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Experience & <span className="text-gradient">Training</span>
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
-        </motion.div>
+        <div className="text-center mt-8 lg:mt-20 mb-16">
+          <SectionHeading title1="Experience &" title2="Training" />
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column: Work Experience */}
