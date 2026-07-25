@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Code, Layout, Database, Layers } from 'lucide-react';
+import SectionHeading from '../ui/SectionHeading';
 
 const skillCategories = [
   {
@@ -76,21 +77,18 @@ export default function Skills() {
         {/* Main Background Card */}
         <div className="glass-card bg-background dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
 
-          <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mt-8 lg:mt-20 mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
-            Core <span className="text-primary">Skills</span>
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
-          <p className="text-secondary mt-6 max-w-xl mx-auto font-light leading-relaxed">
+        <div className="text-center mt-8 lg:mt-20 mb-16">
+          <SectionHeading title1="Core" title2="Skills" />
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-secondary mt-2 max-w-xl mx-auto font-light leading-relaxed"
+          >
             A comprehensive overview of my technical stack and engineering specialties developed through rigorous training and practice.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         <motion.div
           variants={containerVariants}
