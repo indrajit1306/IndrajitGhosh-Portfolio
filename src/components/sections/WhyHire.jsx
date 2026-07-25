@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Terminal, Flame, Sparkles, Zap, Compass, RefreshCw } from 'lucide-react';
 import { Canvas } from '@react-three/fiber';
 import Constellation from '../canvas/Constellation';
+import SectionHeading from '../ui/SectionHeading';
 
 const reasons = [
   {
@@ -78,21 +79,18 @@ export default function WhyHire() {
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
         <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
-            variants={containerVariants}
-            className="text-center max-w-4xl mx-auto mb-16"
-          >
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              Why Hire <span className="text-gradient">Indrajit</span>?
-            </motion.h2>
-            <motion.div variants={itemVariants} className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-6" />
-            <motion.p variants={itemVariants} className="text-secondary text-lg max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+            <SectionHeading title1="Why Hire" title2="Indrajit?" />
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-secondary text-lg max-w-2xl mx-auto mt-2"
+            >
               A snapshot of core competencies, professional standards, and engineering values built to add immediate momentum to your tech squad.
             </motion.p>
-          </motion.div>
+          </div>
 
           <motion.div
             initial="hidden"
