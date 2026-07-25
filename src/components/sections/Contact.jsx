@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, FileText } from 'lucide-react';
 import ThankYou from './ThankYou';
+import SectionHeading from '../ui/SectionHeading';
 
 export default function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -63,21 +64,18 @@ export default function Contact() {
         {/* Main Background Card */}
         <div className="glass-card bg-background dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex flex-col justify-center">
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              Get In <span className="text-gradient">Touch</span>
-            </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
-            <p className="text-secondary mt-6 max-w-xl mx-auto font-light leading-relaxed">
+          <div className="text-center mb-16">
+            <SectionHeading title1="Get In" title2="Touch" />
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-secondary mt-2 max-w-xl mx-auto font-light leading-relaxed"
+            >
               Let's collaborate! Feel free to reach out for new opportunities, project ideas, or software engineering queries.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
             {/* Left Column: Direct Contact Info */}
