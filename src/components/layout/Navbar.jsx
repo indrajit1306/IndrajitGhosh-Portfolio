@@ -36,20 +36,25 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="fixed top-8 left-0 right-0 mx-auto z-50 w-[95%] max-w-[1250px] transition-all duration-300"
       >
-        <div className="bg-[#1C1C1C] text-white rounded-[40px] px-2 py-2 flex items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.12)] w-full">
+        <div className={cn(
+          "text-white rounded-[40px] px-2 py-2 flex items-center justify-between w-full transition-all duration-1000 ease-in-out",
+          scrolled 
+            ? "bg-[#1C1C1C]/50 dark:bg-primary/50 backdrop-blur-lg shadow-lg border border-white/10" 
+            : "bg-[#1C1C1C] dark:bg-primary shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+        )}>
           
           {/* Desktop Nav */}
           <nav className="hidden md:grid grid-cols-3 items-center w-full">
             
             {/* Left side links */}
             <div className="flex items-center justify-start gap-2 lg:gap-6 pl-4">
-              <a href="#home" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
+              <a href="#home" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] dark:text-white hover:bg-[#F37335] dark:hover:bg-white/20 hover:text-white transition-all">
                 Home
               </a>
-              <a href="#about" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
+              <a href="#about" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] dark:text-white hover:bg-[#F37335] dark:hover:bg-white/20 hover:text-white transition-all">
                 About
               </a>
-              <a href="#skills" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
+              <a href="#skills" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] dark:text-white hover:bg-[#F37335] dark:hover:bg-white/20 hover:text-white transition-all">
                 Skills
               </a>
             </div>
@@ -57,25 +62,25 @@ export default function Navbar() {
             {/* Logo Center */}
             <div className="flex items-center justify-center">
               <a href="#" className="flex items-center gap-2">
-                <span className="bg-[#F37335] text-white w-9 h-9 rounded-full flex items-center justify-center font-bold text-[15px] shadow-sm">IG</span>
+                <span className="bg-[#F37335] dark:bg-white text-white dark:text-primary w-9 h-9 rounded-full flex items-center justify-center font-bold text-[15px] shadow-sm transition-colors duration-300">IG</span>
                 <span className="text-[18px] font-bold tracking-wider">INDRAJIT</span>
               </a>
             </div>
 
             {/* Right side links */}
             <div className="flex items-center justify-end gap-2 lg:gap-6 pr-6">
-              <a href="#projects" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
+              <a href="#projects" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] dark:text-white hover:bg-[#F37335] dark:hover:bg-white/20 hover:text-white transition-all">
                 Projects
               </a>
-              <a href="#experience" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
+              <a href="#experience" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] dark:text-white hover:bg-[#F37335] dark:hover:bg-white/20 hover:text-white transition-all">
                 Experience
               </a>
-              <a href="#contact" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] hover:bg-[#F37335] hover:text-white transition-all">
+              <a href="#contact" className="px-5 py-2.5 rounded-full text-[15px] font-medium text-[#E0E0E0] dark:text-white hover:bg-[#F37335] dark:hover:bg-white/20 hover:text-white transition-all">
                 Contact
               </a>
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-full hover:bg-white/10 transition-colors text-[#E0E0E0] hover:text-white flex items-center justify-center"
+                className="p-2 rounded-full hover:bg-white/10 dark:hover:bg-white/20 transition-colors text-[#E0E0E0] dark:text-white flex items-center justify-center"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -87,13 +92,13 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <div className="flex items-center md:hidden pr-4 w-full justify-between">
              <a href="#" className="flex items-center gap-2 ml-4">
-                <span className="bg-[#F37335] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-[14px]">IG</span>
+                <span className="bg-[#F37335] dark:bg-white text-white dark:text-primary w-8 h-8 rounded-full flex items-center justify-center font-bold text-[14px] transition-colors duration-300">IG</span>
                 <span className="text-[16px] font-bold tracking-wider">INDRAJIT</span>
               </a>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 text-white hover:bg-white/10 rounded-full transition-colors"
+                className="p-2 text-white hover:bg-white/10 dark:hover:bg-white/20 rounded-full transition-colors"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
