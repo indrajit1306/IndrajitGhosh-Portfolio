@@ -167,9 +167,9 @@ export default function Hero() {
           {/* Portrait Image */}
           <div className="relative z-10 w-full max-w-[450px] md:max-w-[550px] h-full flex items-end justify-center">
             <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+              src="/indrajitGhosh_new_nobg.png" 
               alt="Indrajit Ghosh" 
-              className="w-auto h-full object-cover object-top drop-shadow-xl relative z-10" 
+              className="w-auto h-full object-cover object-top drop-shadow-xl relative z-10 scale-95 origin-bottom bg-gradient-to-br from-white to-[#F37335] dark:from-white dark:to-[#F37335]"
               style={{
                   maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)'
