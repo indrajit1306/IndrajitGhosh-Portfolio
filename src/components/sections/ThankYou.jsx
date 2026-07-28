@@ -28,9 +28,9 @@ export default function ThankYou() {
       {/* Photo and Decorative Stars */}
       <div className="relative md:absolute bottom-0 right-0 z-20 flex items-end justify-center md:justify-end w-full pointer-events-none -mt-4 md:mt-0 mix-blend-normal dark:mix-blend-lighten">
         <img
-          src="/thank_you_person.png"
+          src="/indrajitGhosh_new_nobg.png"
           alt="Thank You Person"
-          className="h-[350px] sm:h-[400px] md:h-[550px] lg:h-[650px] w-auto object-cover object-bottom relative z-20 md:mr-16 rounded-full dark:rounded-none shadow-2xl dark:shadow-none bg-[#fdb813] dark:bg-transparent aspect-square"
+          className="h-[300px] sm:h-[350px] md:h-[450px] lg:h-[550px] w-auto object-cover object-bottom relative z-20 md:mr-16 rounded-full dark:rounded-none shadow-2xl dark:shadow-none bg-[#fdb813] dark:bg-transparent aspect-square"
         />
         <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary absolute bottom-6 right-6 md:right-12 z-10 hidden md:block transition-colors duration-300" style={{ filter: 'drop-shadow(0 0 10px var(--primary-glow))' }}>
           <path d="M60 0L65.5 45.5L110 50L65.5 54.5L60 100L54.5 54.5L10 50L54.5 45.5L60 0Z" fill="currentColor" />
