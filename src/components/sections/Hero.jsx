@@ -162,14 +162,14 @@ export default function Hero() {
         <motion.div variants={itemVariants} className="relative w-full flex justify-center mt-auto pt-6 flex-1 min-h-0">
           
           {/* Orange Arch Background - Flush with bottom */}
-          <div className="absolute bottom-0 w-[95%] sm:w-[600px] md:w-[800px] h-[80%] max-h-[450px] bg-accent rounded-t-full z-0 transition-colors" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[80%] max-h-[450px] aspect-[1.8/1] bg-accent rounded-t-full z-0 transition-colors" />
           
           {/* Portrait Image */}
           <div className="relative z-10 w-full max-w-[450px] md:max-w-[550px] h-full flex items-end justify-center">
             <img 
               src="/indrajitGhosh_new_nobg.png" 
               alt="Indrajit Ghosh" 
-              className="w-auto h-full object-cover object-top drop-shadow-xl relative z-10 scale-95 origin-bottom bg-gradient-to-br from-white to-[#F37335] dark:from-white dark:to-[#F37335]"
+              className="w-auto h-full aspect-[4/5] object-cover object-top drop-shadow-xl relative z-10 scale-95 origin-bottom bg-gradient-to-br from-white to-[#F37335] dark:from-white dark:to-[#F37335]"
               style={{
                   maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)'
