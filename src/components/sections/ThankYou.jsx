@@ -21,8 +21,11 @@ export default function ThankYou() {
             For Your Attention
           </div>
         </div>
-        <p className="text-xs md:text-sm text-gray-300 max-w-md font-light leading-relaxed text-left relative z-10 mt-10 md:mt-12">
-        </p>
+        <div className="relative z-10 mt-16 md:mt-32">
+          <p className="text-xs md:text-sm text-slate-500 dark:text-gray-400 font-medium tracking-wide uppercase">
+            &copy; {new Date().getFullYear()} Indrajit Ghosh. All Rights Reserved.
+          </p>
+        </div>
       </div>
 
       {/* Photo and Decorative Stars */}
