@@ -93,13 +93,12 @@ export default function Experience() {
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
         {/* Main Background Card */}
         <div 
-          className="dark glass-card p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-2xl flex-1 flex flex-col justify-center rounded-[2.5rem] text-foreground"
+          className="glass-card bg-slate-50/50 dark:bg-[#0a0a0a] p-6 md:p-8 lg:p-12 border border-slate-200/50 dark:border-white/5 relative overflow-hidden shadow-2xl flex-1 flex flex-col justify-center rounded-[2.5rem] text-foreground"
           style={{
-            backgroundColor: '#0a0a0a',
             backgroundImage: `
               radial-gradient(circle at 100% 0%, rgba(243, 115, 53, 0.15) 0%, transparent 40%),
               radial-gradient(circle at 0% 100%, rgba(243, 115, 53, 0.1) 0%, transparent 40%),
-              url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-200 200 C 200 -100 600 500 1200 100' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='80'/%3E%3Cpath d='M-200 400 C 200 100 600 700 1200 300' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='100'/%3E%3Cpath d='M-200 600 C 200 300 600 900 1200 500' fill='none' stroke='rgba(255,255,255,0.015)' stroke-width='120'/%3E%3Cpath d='M-200 800 C 200 500 600 1100 1200 700' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='90'/%3E%3C/svg%3E")
+              url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-200 200 C 200 -100 600 500 1200 100' fill='none' stroke='rgba(150,150,150,0.05)' stroke-width='80'/%3E%3Cpath d='M-200 400 C 200 100 600 700 1200 300' fill='none' stroke='rgba(150,150,150,0.04)' stroke-width='100'/%3E%3Cpath d='M-200 600 C 200 300 600 900 1200 500' fill='none' stroke='rgba(150,150,150,0.03)' stroke-width='120'/%3E%3Cpath d='M-200 800 C 200 500 600 1100 1200 700' fill='none' stroke='rgba(150,150,150,0.05)' stroke-width='90'/%3E%3C/svg%3E")
             `,
             backgroundSize: '100% 100%, 100% 100%, cover',
             backgroundPosition: 'center, center, center',
