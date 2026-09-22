@@ -91,41 +91,31 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold mb-6">Contact Channels</h3>
 
                 <div className="space-y-6">
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="p-3.5 rounded-xl bg-primary/10 text-primary border border-primary/20 group-hover/item:bg-primary group-hover/item:text-white transition-all duration-300">
-                      <Mail className="w-5 h-5" />
+                  {[
+                    { icon: Mail, title: 'Email Address', value: 'ijghosh13@gmail.com', href: 'mailto:ijghosh13@gmail.com', color: 'primary' },
+                    { icon: Phone, title: 'Phone / Mobile', value: '+91 8240657314', href: 'tel:+919705787037', color: 'accent' },
+                    { icon: MapPin, title: 'Address', value: 'Kolkata, West Bengal, India', color: 'primary' }
+                  ].map((item, idx) => {
+                    const Icon = item.icon;
+                    return (
+                    <div key={idx} className="flex items-center gap-4 group/item">
+                      <div className={`p-3.5 rounded-xl bg-${item.color}/10 text-${item.color} border border-${item.color}/20 group-hover/item:bg-${item.color} group-hover/item:text-white transition-all duration-300`}>
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1">{item.title}</p>
+                        {item.href ? (
+                          <a href={item.href} className="text-lg font-medium text-foreground hover:text-primary transition-colors">
+                            {item.value}
+                          </a>
+                        ) : (
+                          <span className="text-lg font-medium text-foreground">
+                            {item.value}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-xs text-secondary uppercase font-semibold tracking-wider">Email Address</p>
-                      <a href="mailto:ijghosh13@gmail.com" className="text-sm font-medium hover:underline text-foreground mt-1 block">
-                        ijghosh13@gmail.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="p-3.5 rounded-xl bg-accent/10 text-accent border border-accent/20 group-hover/item:bg-accent group-hover/item:text-white transition-all duration-300">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-secondary uppercase font-semibold tracking-wider">Phone / Mobile</p>
-                      <a href="tel:+919705787037" className="text-sm font-medium hover:underline text-foreground mt-1 block">
-                        +91 8240657314
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="p-3.5 rounded-xl bg-primary/10 text-primary border border-primary/20 group-hover/item:bg-primary group-hover/item:text-white transition-all duration-300">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-secondary uppercase font-semibold tracking-wider">Address</p>
-                      <span className="text-sm font-medium text-foreground mt-1 block">
-                        Kolkata, West Bengal, India
-                      </span>
-                    </div>
-                  </div>
+                  )})}
                 </div>
               </div>
             </motion.div>
@@ -154,34 +144,25 @@ export default function Contact() {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label htmlFor="form-name" className="text-xs font-semibold text-secondary uppercase tracking-widest">
-                          Your Name
-                        </label>
-                        <input
-                          type="text"
-                          id="form-name"
-                          required
-                          value={formState.name}
-                          onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                          className="w-full px-4 py-3 bg-slate-50 dark:bg-black/40 border border-slate-200/60 dark:border-white/10 focus:border-primary/50 rounded-xl outline-none text-sm text-foreground transition-all"
-                          placeholder="John Doe"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="form-email" className="text-xs font-semibold text-secondary uppercase tracking-widest">
-                          Your Email
-                        </label>
-                        <input
-                          type="email"
-                          id="form-email"
-                          required
-                          value={formState.email}
-                          onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                          className="w-full px-4 py-3 bg-slate-50 dark:bg-black/40 border border-slate-200/60 dark:border-white/10 focus:border-primary/50 rounded-xl outline-none text-sm text-foreground transition-all"
-                          placeholder="john@example.com"
-                        />
-                      </div>
+                      {[
+                        { id: 'form-name', type: 'text', label: 'Your Name', state: 'name', placeholder: 'John Doe' },
+                        { id: 'form-email', type: 'email', label: 'Your Email', state: 'email', placeholder: 'john@example.com' }
+                      ].map((field) => (
+                        <div key={field.id} className="space-y-2">
+                          <label htmlFor={field.id} className="text-xs font-semibold text-secondary uppercase tracking-widest">
+                            {field.label}
+                          </label>
+                          <input
+                            type={field.type}
+                            id={field.id}
+                            required
+                            value={formState[field.state]}
+                            onChange={(e) => setFormState({ ...formState, [field.state]: e.target.value })}
+                            className="w-full px-4 py-3 bg-slate-50 dark:bg-black/40 border border-slate-200/60 dark:border-white/10 focus:border-primary/50 rounded-xl outline-none text-sm text-foreground transition-all"
+                            placeholder={field.placeholder}
+                          />
+                        </div>
+                      ))}
                     </div>
 
                     <div className="space-y-2">
