@@ -78,8 +78,8 @@ export default function WhyHire() {
       </div>
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
-        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
-          <div className="text-center mb-16">
+        <div className="glass-card bg-white dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col">
+          <div className="text-center mt-8 lg:mt-12 mb-16">
             <SectionHeading title1="Why Hire" title2="Indrajit?" />
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
