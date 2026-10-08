@@ -75,64 +75,64 @@ export default function Skills() {
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
         {/* Main Background Card */}
-        <div className="glass-card bg-background dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
+        <div className="glass-card bg-background dark:bg-zinc-900 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col">
 
-        <div className="text-center mt-8 lg:mt-20 mb-16">
-          <SectionHeading title1="Core" title2="Skills" />
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <div className="text-center mt-8 lg:mt-12 mb-16">
+            <SectionHeading title1="Core" title2="Skills" />
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-secondary mt-2 max-w-xl mx-auto font-light leading-relaxed"
+            >
+              A comprehensive overview of my technical stack and engineering specialties developed through rigorous training and practice.
+            </motion.p>
+          </div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: false, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-secondary mt-2 max-w-xl mx-auto font-light leading-relaxed"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
-            A comprehensive overview of my technical stack and engineering specialties developed through rigorous training and practice.
-          </motion.p>
-        </div>
+            {skillCategories.map((category, index) => {
+              const Icon = category.icon;
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-        >
-          {skillCategories.map((category, index) => {
-            const Icon = category.icon;
+              return (
+                <motion.div
+                  key={index}
+                  variants={cardVariants}
+                  className={`glass-card p-8 transition-all duration-500 hover:-translate-y-1 relative group overflow-hidden hover:shadow-[0_0_40px_rgba(243,115,53,0.25)] hover:border-primary/30 text-foreground`}
+                >
+                  {/* Visual hover border overlay */}
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 bg-gradient-to-br ${category.color} rounded-2xl pointer-events-none z-0`} />
+                  <div className={`absolute top-0 left-0 w-full h-[3px] rounded-t-2xl bg-gradient-to-r ${category.color} z-10`} />
 
-            return (
-              <motion.div
-                key={index}
-                variants={cardVariants}
-                className={`glass-card p-8 transition-all duration-500 hover:-translate-y-1 relative group overflow-hidden hover:shadow-[0_0_40px_rgba(243,115,53,0.25)] hover:border-primary/30 text-foreground`}
-              >
-                {/* Visual hover border overlay */}
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 bg-gradient-to-br ${category.color} rounded-2xl pointer-events-none z-0`} />
-                <div className={`absolute top-0 left-0 w-full h-[3px] rounded-t-2xl bg-gradient-to-r ${category.color} z-10`} />
-
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className={`p-3 rounded-xl bg-gradient-to-br ${category.color} text-white shadow-lg`}>
-                      <Icon className="w-6 h-6" />
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className={`p-3 rounded-xl bg-gradient-to-br ${category.color} text-white shadow-lg`}>
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-xl font-bold tracking-wide">{category.title}</h3>
                     </div>
-                    <h3 className="text-xl font-bold tracking-wide">{category.title}</h3>
-                  </div>
 
-                  <div className="flex flex-wrap gap-3">
-                    {category.skills.map((skill, sIndex) => (
-                      <span 
-                        key={sIndex} 
-                        className="px-4 py-2 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full text-sm font-medium text-secondary hover:text-primary transition-all duration-300 hover:scale-105 hover:border-primary/50 hover:bg-primary/10 cursor-default shadow-sm"
-                      >
-                        {skill.name}
-                      </span>
-                    ))}
+                    <div className="flex flex-wrap gap-3">
+                      {category.skills.map((skill, sIndex) => (
+                        <span
+                          key={sIndex}
+                          className="px-4 py-2 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full text-sm font-medium text-secondary hover:text-primary transition-all duration-300 hover:scale-105 hover:border-primary/50 hover:bg-primary/10 cursor-default shadow-sm"
+                        >
+                          {skill.name}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </div>
     </section>
