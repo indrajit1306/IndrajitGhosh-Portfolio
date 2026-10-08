@@ -65,10 +65,10 @@ export default function About() {
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex-1 flex flex-col">
         {/* Main Background Card */}
-        <div className="glass-card bg-background/40 dark:bg-background-end/40 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col justify-center">
-
-
-          <SectionHeading title1="About" title2="Me" />
+        <div className="glass-card bg-background/40 dark:bg-background-end/40 p-6 md:p-8 lg:p-12 border border-transparent dark:border-white/5 relative overflow-hidden shadow-xl flex-1 flex flex-col">
+          <div className="text-center mt-8 lg:mt-12 mb-16">
+            <SectionHeading title1="About" title2="Me" />
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Summary and Profile Details */}
