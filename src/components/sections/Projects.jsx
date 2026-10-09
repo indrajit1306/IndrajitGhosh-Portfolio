@@ -470,7 +470,7 @@ export default function Projects() {
               <div className="glass-card flex-1 p-8 border border-slate-200/50 dark:border-white/10 flex flex-col justify-between relative overflow-hidden">
                 <div>
                   {/* Role Switcher Tabs */}
-                  <div className="flex bg-slate-100 dark:bg-black/40 p-1.5 rounded-xl border border-slate-200/60 dark:border-white/5 mb-8 font-mono">
+                  <div className="flex flex-col sm:flex-row bg-slate-100 dark:bg-black/40 p-1.5 rounded-xl border border-slate-200/60 dark:border-white/5 mb-8 font-mono gap-1.5 sm:gap-0">
                     <button
                       onClick={() => setSelectedRole('ml')}
                       className={`flex-1 py-3 px-4 rounded-lg font-bold text-[10px] tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer ${selectedRole === 'ml'
