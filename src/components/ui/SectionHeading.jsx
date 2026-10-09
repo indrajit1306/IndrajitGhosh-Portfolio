@@ -4,9 +4,20 @@ import { Fragment } from 'react';
 export default function SectionHeading({ title1, title2 }) {
   return (
     <div 
-      className="overflow-hidden whitespace-nowrap w-full mb-8 md:mb-12 py-3 md:py-4 bg-primary text-white rounded-full relative"
-      style={{ perspective: '1200px' }}
+      className="overflow-hidden whitespace-nowrap w-full mb-8 md:mb-12 py-3 md:py-4 bg-primary text-white rounded-full relative section-heading-container"
     >
+      <style>{`
+        .section-heading-container {
+          --radius: 500px;
+          perspective: var(--radius);
+        }
+        @media (min-width: 768px) {
+          .section-heading-container {
+            --radius: 1200px;
+          }
+        }
+      `}</style>
+      
       {/* 3D curve fade overlay */}
       <div 
         className="absolute inset-0 z-20 pointer-events-none" 
@@ -18,7 +29,7 @@ export default function SectionHeading({ title1, title2 }) {
         {/* Pull carousel back to keep front surface at original scale */}
         <div 
           className="absolute inset-0"
-          style={{ transform: 'translateZ(-1200px)', transformStyle: 'preserve-3d' }}
+          style={{ transform: 'translateZ(calc(var(--radius) * -1))', transformStyle: 'preserve-3d' }}
         >
           <motion.div
             animate={{ rotateY: [0, 360] }}
@@ -32,11 +43,11 @@ export default function SectionHeading({ title1, title2 }) {
                 <div 
                   className="absolute top-1/2 left-1/2 flex items-center justify-center whitespace-nowrap"
                   style={{
-                    transform: `translate(-50%, -50%) rotateY(${i * 30}deg) translateZ(1200px)`,
+                    transform: `translate(-50%, -50%) rotateY(${i * 30}deg) translateZ(var(--radius))`,
                     backfaceVisibility: 'hidden'
                   }}
                 >
-                  <h2 className="text-4xl md:text-5xl font-bold tracking-tight py-1">
+                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight py-1">
                     {title1} {title2 && <span>{title2}</span>}
                   </h2>
                 </div>
@@ -45,11 +56,11 @@ export default function SectionHeading({ title1, title2 }) {
                 <div 
                   className="absolute top-1/2 left-1/2 flex items-center justify-center"
                   style={{
-                    transform: `translate(-50%, -50%) rotateY(${i * 30 + 15}deg) translateZ(1200px)`,
+                    transform: `translate(-50%, -50%) rotateY(${i * 30 + 15}deg) translateZ(var(--radius))`,
                     backfaceVisibility: 'hidden'
                   }}
                 >
-                  <div className="w-3 h-3 bg-white rounded-full shadow-sm" />
+                  <div className="w-2 h-2 md:w-3 md:h-3 bg-white rounded-full shadow-sm" />
                 </div>
               </Fragment>
             ))}
