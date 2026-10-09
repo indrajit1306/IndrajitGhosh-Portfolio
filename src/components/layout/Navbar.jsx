@@ -44,7 +44,7 @@ export default function Navbar() {
         )}>
           
           {/* Desktop Nav */}
-          <nav className="hidden md:grid grid-cols-3 items-center w-full">
+          <nav className="hidden lg:flex items-center justify-between w-full">
             
             {/* Left side links */}
             <div className="flex items-center justify-start gap-2 lg:gap-6 pl-4">
@@ -60,7 +60,7 @@ export default function Navbar() {
             </div>
 
             {/* Logo Center */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center absolute left-1/2 -translate-x-1/2">
               <a href="#" className="flex items-center gap-2">
                 <span className="bg-[#F37335] dark:bg-white text-white dark:text-primary w-9 h-9 rounded-full flex items-center justify-center font-bold text-[15px] shadow-sm transition-colors duration-300">IG</span>
                 <span className="text-[18px] font-bold tracking-wider">INDRAJIT</span>
@@ -90,7 +90,7 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile Toggle */}
-          <div className="flex items-center md:hidden pr-4 w-full justify-between">
+          <div className="flex items-center lg:hidden pr-4 w-full justify-between">
              <a href="#" className="flex items-center gap-2 ml-4">
                 <span className="bg-[#F37335] dark:bg-white text-white dark:text-primary w-8 h-8 rounded-full flex items-center justify-center font-bold text-[14px] transition-colors duration-300">IG</span>
                 <span className="text-[16px] font-bold tracking-wider">INDRAJIT</span>
@@ -120,7 +120,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="md:hidden mt-4 bg-[#1C1C1C] rounded-2xl overflow-hidden shadow-2xl mx-auto w-full"
+              className="lg:hidden mt-4 bg-[#1C1C1C] rounded-2xl overflow-hidden shadow-2xl mx-auto w-full"
             >
               <div className="flex flex-col px-6 py-4 space-y-4">
                 {navLinks.map((link) => (
