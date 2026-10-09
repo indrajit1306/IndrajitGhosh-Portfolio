@@ -214,15 +214,15 @@ export default function Hero() {
           </div>
 
           {/* Bottom Action Pill */}
-          <div className="absolute bottom-8 md:bottom-12 z-30 left-1/2 -translate-x-1/2 bg-white/25 dark:bg-black/25 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-[40px] p-[6px] flex items-center shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] transition-colors">
-            <a href="#projects" className="px-8 py-3.5 text-foreground hover:bg-primary hover:text-white rounded-full font-medium text-[16px] flex items-center gap-2 transition-all hover:scale-105">
-              Portfolio <ArrowUpRight className="w-[18px] h-[18px] opacity-90" />
+          <div className="absolute bottom-6 md:bottom-12 z-30 left-1/2 -translate-x-1/2 w-max max-w-[95vw] bg-white/25 dark:bg-black/25 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-[40px] p-[6px] flex flex-row items-center justify-between shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] transition-colors overflow-x-auto overflow-y-hidden hide-scrollbar">
+            <a href="#projects" className="px-4 sm:px-8 py-2.5 sm:py-3.5 text-foreground hover:bg-primary hover:text-white rounded-full font-medium text-[14px] sm:text-[16px] flex items-center gap-1 sm:gap-2 transition-all hover:scale-105 shrink-0">
+              Portfolio <ArrowUpRight className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px] opacity-90" />
             </a>
-            <a href="#contact" className="px-8 py-3.5 text-foreground hover:bg-primary hover:text-white rounded-full font-medium text-[16px] transition-all hover:scale-105">
+            <a href="#contact" className="px-4 sm:px-8 py-2.5 sm:py-3.5 text-foreground hover:bg-primary hover:text-white rounded-full font-medium text-[14px] sm:text-[16px] transition-all hover:scale-105 shrink-0">
               Hire me
             </a>
-            <a href="/resume.pdf" download className="px-8 py-3.5 text-foreground hover:bg-primary hover:text-white rounded-full font-medium text-[16px] flex items-center gap-2 transition-all hover:scale-105">
-              Resume <Download className="w-[18px] h-[18px] opacity-90" />
+            <a href="/resume.pdf" download className="px-4 sm:px-8 py-2.5 sm:py-3.5 text-foreground hover:bg-primary hover:text-white rounded-full font-medium text-[14px] sm:text-[16px] flex items-center gap-1 sm:gap-2 transition-all hover:scale-105 shrink-0">
+              Resume <Download className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px] opacity-90" />
             </a>
           </div>
         </motion.div>
